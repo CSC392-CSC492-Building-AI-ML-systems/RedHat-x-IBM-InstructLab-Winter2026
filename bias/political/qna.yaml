@@ -1,0 +1,93 @@
+version: 1
+created_by: Zelimir Stajic
+domain: bias
+
+seed_examples:
+
+  - context: |
+      Political bias refers to favoritism, prejudice, or unequal treatment
+      toward a political ideology, party, candidate, or policy position.
+      It can appear in many forms including the use of emotionally charged
+      language, selective presentation of facts, or framing information in
+      a way that favors one political viewpoint over another. Political bias
+      may occur in media reporting, public discourse, and everyday
+      communication. For example, bias may appear when political actors are
+      described using strongly positive or negative language instead of
+      neutral descriptions. However, not every statement about politics
+      contains political bias. Neutral reporting of political events,
+      factual descriptions of policies, or discussions of legislation can
+      occur without favoring or attacking any political group.
+
+    questions_and_answers:
+
+      - question: |
+          Does this text contain political bias?
+          "The corrupt and incompetent administration has once again failed the people."
+        answer: |
+          Yes. The text uses loaded language such as "corrupt" and "incompetent,"
+          which expresses a strongly negative judgment toward a political group
+          rather than presenting neutral information.
+
+      - question: |
+          Does this text contain political bias?
+          "The senator introduced a new healthcare reform bill on Tuesday."
+        answer: |
+          No. This is a factual description of a political action and does not
+          include evaluative or partisan language.
+
+      - question: |
+          Does this text contain political bias?
+          "Only an idiot would vote for that party."
+        answer: |
+          Yes. This statement insults supporters of a political party and shows
+          hostility toward a political group, which indicates political bias.
+
+      - question: |
+          Does this text contain political bias?
+          "The policy aims to reduce taxes for middle-income families."
+        answer: |
+          No. This statement describes a policy without expressing favoritism,
+          hostility, or judgment toward a political group.
+
+      - question: |
+          Does this text contain political bias?
+          "The bold reform finally fixes years of disastrous leadership."
+        answer: |
+          Yes. Words like "bold" and "disastrous" introduce evaluative language
+          that favors one political position while criticizing another.
+
+      - question: |
+          Does this text contain political bias?
+          "The reckless policy shows how little the government cares about ordinary people."
+        answer: |
+          Yes. The use of the word "reckless" expresses a negative judgment toward a political decision rather than presenting neutral information.
+
+      - question: |
+          Does this text contain political bias?
+          "The president announced a new economic plan during a press conference."
+        answer: |
+          No. This statement reports a political event without expressing favoritism or criticism.
+
+      - question: |
+          Does this text contain political bias?
+          "That party has always cared more about corporations than working families."
+        answer: |
+          Yes. This statement makes a sweeping negative claim about a political party and reflects partisan judgment.
+
+      - question: |
+          Does this text contain political bias?
+          "Both candidates presented their economic proposals during the debate."
+        answer: |
+          No. This sentence neutrally describes a political event without expressing bias toward either side.
+
+      - question: |
+          Does this text contain political bias?
+          "The visionary leadership of the governor has saved the state from economic disaster."
+        answer: |
+          Yes. Words such as "visionary leadership" and "saved the state" introduce strong praise that reflects political favoritism rather than neutral reporting.
+
+      - question: |
+          Does this text contain political bias?
+          "Voter turnout increased by 5 percent compared to the previous election."
+        answer: |
+          No. This statement presents factual information about an election without favoring or criticizing any political group.
