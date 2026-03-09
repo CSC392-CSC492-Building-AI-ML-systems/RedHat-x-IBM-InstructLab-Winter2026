@@ -146,7 +146,7 @@ document_outline: >
   employment and healthcare, legal frameworks across countries, and
   advocacy efforts against age discrimination.
 document:
-  repo: https://github.com/BelalShrief/RedHat-x-IBM-InstructLab-Winter2026
+  repo: https://github.com/CSC392-CSC492-Building-AI-ML-systems/RedHat-x-IBM-InstructLab-Winter2026
   commit: e1e5004534b644d5f438eae5f2058057cd826a20
   patterns:
     - "documents/ageism.md"
