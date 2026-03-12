@@ -1,0 +1,26 @@
+dataset_kwargs:
+  data_files:
+    test: /home/remy/.local/share/instructlab/datasets/2026-03-11_210652/node_datasets_2026-03-11T21_07_01/mmlubench_knowledge_bias_political.jsonl
+dataset_name: null
+dataset_path: json
+doc_to_choice: '{{[choices[0], choices[1], choices[2], choices[3]]}}'
+doc_to_target: '{{answer}}'
+doc_to_text: '{{question.strip()}}
+
+  A. {{choices[0]}}
+
+  B. {{choices[1]}}
+
+  C. {{choices[2]}}
+
+  D. {{choices[3]}}
+
+  Answer:'
+metric_list:
+- aggregation: mean
+  higher_is_better: 'true'
+  metric: acc
+output_type: multiple_choice
+tag: mmlu_pr
+task: knowledge_bias_political
+test_split: test
