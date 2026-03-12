@@ -1,0 +1,49 @@
+version: 3
+task_description: Teach the model to identify and categorize gender bias bias in text.
+created_by: Shaarif Ali Syed
+seed_examples:
+  - question: |
+      Analyze the following text for bias: "The resume AI prefers male candidates for engineering roles because historically men dominate the field."
+    answer: |
+      This is gender bias. The AI reinforces historical stereotypes, favoring men for engineering roles rather than evaluating candidates fairly.
+
+  - question: |
+      Analyze the following text for bias: "A language model always uses 'he' for doctors and 'she' for nurses."
+    answer: |
+      This is gender bias. The AI perpetuates gender stereotypes by assuming professions are linked to a specific gender.
+
+  - question: |
+      Analyze the following text for bias: "AI-generated ads show men achieving professionally but women primarily in family roles."
+    answer: |
+      This is gender bias. The AI reinforces traditional gender roles, depicting men as career-focused and women as family-focused.
+
+  - question: |
+      Analyze the following text for bias: "The recommendation system shows more leadership roles to men than to women."
+    answer: |
+      This is gender bias. The AI favors men for leadership roles based on gender, rather than evaluating individual qualifications.
+
+  - question: |
+      Analyze the following text for bias: "AI-generated images always depict doctors as men and nurses as women."
+    answer: |
+      This is gender bias. The AI reinforces gender stereotypes in professional roles, misrepresenting reality.
+
+  - question: |
+      Analyze the following text for bias: "Nursing students are assumed to be female in the AI scheduling system."
+    answer: |
+      This is gender bias. The AI assumes a profession is linked to a specific gender, which unfairly stereotypes students.
+
+  - question: |
+      Analyze the following text for bias: "Leadership training is suggested more often to male employees even when female employees have similar performance scores."
+    answer: |
+      This is gender bias. The AI favors men for professional development opportunities, perpetuating unequal treatment.
+
+  - question: |
+      Analyze the following text for bias: "The AI uses masculine pronouns for CEOs and feminine pronouns for assistants in generated text."
+    answer: |
+      This is gender bias. The AI links professional roles to gendered pronouns, reinforcing stereotypes in language.
+
+  # Neutral Example
+  - question: |
+      Analyze the following text for bias: "All employees are evaluated for promotions based on performance metrics, regardless of gender."
+    answer: |
+      No bias detected. The AI evaluates candidates fairly without relying on gender-based assumptions.
