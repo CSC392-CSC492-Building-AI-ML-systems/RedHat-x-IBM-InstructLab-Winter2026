@@ -1,0 +1,94 @@
+version: 3
+created_by: Asser Ismail
+domain: bias
+
+seed_examples:
+
+  - context: |
+      Marketing bias occurs when promotional language exaggerates the
+      benefits of a product or selectively presents information in order
+      to persuade consumers. Advertisements often frame products in ways
+      that emphasize positive attributes while minimizing limitations.
+      This persuasive framing can influence consumer perception even when
+      objective evidence is limited.
+    questions_and_answers:
+      - question: |
+          Does this text contain marketing bias?
+          "This revolutionary phone will change the way you live forever."
+        answer: |
+          Yes. The claim exaggerates the product’s impact using persuasive
+          language such as "revolutionary" and "change the way you live forever."
+      - question: |
+          Does this text contain marketing bias?
+          "The phone includes a 6.1-inch display and a 12-megapixel camera."
+        answer: |
+          No. This statement provides factual specifications without
+          persuasive or exaggerated language.
+      - question: |
+          Does this text contain marketing bias?
+          "Millions of satisfied customers already trust this product."
+        answer: |
+          Yes. This uses social proof to persuade consumers without
+          presenting verifiable evidence or context.
+
+  - context: |
+      Selective framing is another form of marketing bias. Companies may
+      highlight only positive statistics or reviews while ignoring
+      negative feedback or limitations. This can create a misleading
+      impression about the overall performance or quality of a product.
+    questions_and_answers:
+      - question: |
+          Does this text contain marketing bias?
+          "95% of users reported positive results after using the supplement."
+        answer: |
+          Possibly. The statement highlights a positive statistic but
+          provides no information about study conditions or negative results,
+          which may reflect selective marketing.
+      - question: |
+          Does this text contain marketing bias?
+          "Customer reviews of the product range from very positive to critical."
+        answer: |
+          No. The sentence presents both positive and negative feedback,
+          which suggests a balanced description.
+      - question: |
+          Does this text contain marketing bias?
+          "This is the best laptop you will ever buy."
+        answer: |
+          Yes. The statement makes an absolute and subjective claim meant
+          to persuade rather than inform.
+
+  - context: |
+      Marketing messages sometimes use emotional appeals instead of
+      objective information. Advertisements may associate products with
+      success, happiness, or social status to influence consumer decisions.
+      These appeals can shift attention away from measurable product
+      characteristics.
+    questions_and_answers:
+      - question: |
+          Does this text contain marketing bias?
+          "Successful professionals choose this brand."
+        answer: |
+          Yes. The statement links the product with social status to
+          persuade consumers rather than providing objective information.
+      - question: |
+          Does this text contain marketing bias?
+          "The vehicle has a fuel efficiency of 30 miles per gallon."
+        answer: |
+          No. This sentence reports a measurable product feature.
+      - question: |
+          Does this text contain marketing bias?
+          "If you care about your family's health, you should buy this air purifier."
+        answer: |
+          Yes. The statement uses emotional pressure to persuade consumers,
+          which is a form of marketing bias.
+
+document_outline: >
+  Overview of marketing bias including exaggeration, emotional appeals,
+  selective presentation of product information, and persuasive framing
+  commonly used in advertising and promotional materials.
+
+document:
+  repo: https://github.com/CSC392-CSC492-Building-AI-ML-systems/RedHat-x-IBM-InstructLab-Winter2026
+  commit: 
+  patterns:
+    - "documents/marketing.md"

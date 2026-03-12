@@ -1,152 +1,76 @@
-version: 3
+version: 2
 created_by: Zelimir Stajic
-domain: bias
-
+task_description: Determine whether a piece of text contains ageism. Ageism refers to prejudice, stereotypes, or discrimination directed at individuals or groups based on their age.
 seed_examples:
+  - question: |
+      Does this text contain ageism?
+      "We shouldn't promote him — he's too old to adapt to change."
+    answer: |
+      Yes. This text contains ageism because it assumes someone cannot adapt due to being "too old," which is a stereotype based on age.
 
-  - context: |
-      Ageism is a type of discrimination based on one's age, generally used
-      to refer to age-based discrimination against elderly people. The term
-      was coined in 1969 by Robert Neil Butler to describe this discrimination,
-      building on the terminology of sexism and racism. Butler defined ageism
-      as a combination of three connected elements: negative attitudes towards
-      old age and the ageing process, discriminatory practices against older
-      people, and institutional practices and policies that perpetuate
-      stereotypes about elderly people. Ageism may be explicit, such as
-      directly insulting an age group, or implicit, where age is used as a
-      reason to exclude someone from opportunities. Not every reference to
-      age is ageist; neutral mentions of age in policies, demographics, or
-      experience descriptions do not necessarily involve prejudice.
-    questions_and_answers:
-      - question: |
-          Does this text contain ageism?
-          "We shouldn't promote him — he's too old to adapt to change."
-        answer: |
-          Yes. This text contains ageism because it assumes someone cannot adapt due to being "too old," which is a stereotype based on age.
-      - question: |
-          Does this text contain ageism?
-          "The retirement policy applies to employees over 65."
-        answer: |
-          No. This is a neutral policy reference and does not express prejudice or stereotypes about age.
-      - question: |
-          Does this text contain ageism?
-          "She has decades of experience in the industry."
-        answer: |
-          No. This statement describes experience and does not contain prejudice or discrimination based on age.
-  - context: |
-      Erdman Palmore has accused managers of stereotyping older workers as
-      being resistant to change, uncreative, cautious, slow to make judgments,
-      lower in physical capacity, uninterested in technological change, and
-      hard to train. Older people face workplace discrimination in the form
-      of stereotypes, such as the inability to use technology and lower
-      productivity. When applying for positions that have strong impacts,
-      attributed stereotypes raise criticism toward their ability to function
-      properly and efficiently. Firms are more than 40% more likely to
-      interview a young adult job applicant than an older job applicant.
-    questions_and_answers:
-      - question: |
-          Does this text contain ageism?
-          "We're looking for a young, energetic candidate to join our team."
-        answer: |
-          Yes. This statement may reflect ageism because it implies preference
-          for younger workers and may discourage older candidates based on age.
-      - question: |
-          Does this text contain ageism?
-          "At her age, she probably shouldn't be learning new technologies."
-        answer: |
-          Yes. This assumes that older people are incapable of learning new technologies, which is an age-based stereotype.
-      - question: |
-          Does this text contain ageism?
-          "She has over 30 years of experience and mentors younger employees."
-        answer: |
-          No. This statement positively describes experience and does not contain prejudice based on age.
-  - context: |
-      The term "ageism" is also used to describe the oppression of younger
-      people by older people. This includes the practice of denying younger
-      people certain rights and privileges usually reserved for adults. This
-      definition of ageism can also include ignoring the ideas and contributions
-      of adolescents and children because they are considered "too young" or
-      dismissing their behavior as caused by their age. Ageism against the
-      young also includes penalties, burdens, or requirements imposed
-      exclusively on young people than on older people, such as age-based
-      military conscription.
-    questions_and_answers:
-      - question: |
-          Does this text contain ageism?
-          "She's young, so she probably isn't mature enough to manage the team."
-        answer: |
-          Yes. This is ageism because it stereotypes someone as immature solely based on being young.
-      - question: |
-          Does this text contain ageism?
-          "He's too young to understand how the real world works."
-        answer: |
-          Yes. This statement stereotypes someone as incapable or naive solely because they are young.
-      - question: |
-          Does this text contain ageism?
-          "He recently graduated from university and is starting his first job."
-        answer: |
-          No. This simply describes someone's stage of life without making negative assumptions about their age.
-  - context: |
-      Ageism during the COVID-19 pandemic, in early 2020, was primarily caused
-      by the surfacing of data pointing the elderly as vulnerable groups. Older
-      adults were often blamed for the ensuing lockdowns and restrictions. The
-      term "Boomer remover" trended on Twitter as a nickname for the disease,
-      appearing in over 65,000 tweets by March 2020. Ageist beliefs against
-      the elderly are commonplace in today's society. For example, an older
-      person who forgets something could be quick to call it a "senior moment",
-      failing to realize the ageism of that statement. People also often utter
-      ageist phrases such as "dirty old man" or "second childhood".
-    questions_and_answers:
-      - question: |
-          Does this text contain ageism?
-          "OK boomer."
-        answer: |
-          Yes. This phrase dismisses someone based on their age group and is commonly used in an ageist manner.
-      - question: |
-          Does this text contain ageism?
-          "Young people today are lazy and don't want to work."
-        answer: |
-          Yes. This makes a broad negative generalization about an entire age group.
-      - question: |
-          Does this text contain ageism?
-          "The company offers special healthcare benefits for employees over 60."
-        answer: |
-          No. This statement describes a policy related to age and does not express prejudice or stereotypes.
-  - context: |
-      There is considerable evidence of discrimination against the elderly in
-      health care. In the patient-physician interaction, physicians and other
-      healthcare providers may hold attitudes, beliefs, and behaviors that are
-      associated with ageism against older patients. Studies have found that
-      some physicians do not seem to show any care or concern toward treating
-      the medical problems of older people. For screening procedures, elderly
-      people are less likely than younger people to be screened for cancers.
-      After being diagnosed with a disease that may be potentially curable,
-      older patients are less likely than younger patients to receive all
-      necessary treatments.
-    questions_and_answers:
-      - question: |
-          Does this question contain ageism?
-          "We should focus treatment resources on younger patients since older ones have already lived their lives."
-        answer: |
-          Yes. This devalues older patients' lives and denies them equal access to medical treatment based on age.
-      - question: |
-          Does this question contain ageism?
-          "The doctor recommended a full screening for a patient that's 75 years old."
-        answer: |
-          No. This statement is only stating the fact that the patient is 75 and does not express any injustice based on the patient's age.
-      - question: | 
-          Does this question contain ageism? 
-          "The nurse spoke to the 80-year-old patient in a slow, childlike tone, assuming he couldn't understand normal speech."
-        answer: |
-          Yes. This assumes that old patients have reduced comprehension skills. 
+  - question: |
+      Does this text contain ageism?
+      "She's young, so she probably isn't mature enough to manage the team."
+    answer: |
+      Yes. This is ageism because it stereotypes someone as immature solely based on being young.
 
-document_outline: >
-  Overview of ageism including its definition, origins, classification,
-  forms of implicit and explicit age-based discrimination, effects on
-  employment and healthcare, legal frameworks across countries, and
-  advocacy efforts against age discrimination.
-document:
-  repo: https://github.com/CSC392-CSC492-Building-AI-ML-systems/RedHat-x-IBM-InstructLab-Winter2026
-  commit: e1e5004534b644d5f438eae5f2058057cd826a20
-  patterns:
-    - "documents/ageism.md"
+  - question: |
+      Does this text contain ageism?
+      "The retirement policy applies to employees over 65."
+    answer: |
+      No. This is a neutral policy reference and does not express prejudice or stereotypes about age.
+
+  - question: |
+      Does this text contain ageism?
+      "OK boomer."
+    answer: |
+      Yes. This phrase dismisses someone based on their age group and is commonly used in an ageist manner.
+
+  - question: |
+      Does this text contain ageism?
+      "She has decades of experience in the industry."
+    answer: |
+      No. This statement describes experience and does not contain prejudice or discrimination based on age.
+
+  - question: |
+      Does this text contain ageism?
+      "We're looking for a young, energetic candidate to join our team."
+    answer: |
+      Yes. This statement may reflect ageism because it implies preference
+      for younger workers and may discourage older candidates based on age.
+
+  - question: |
+      Does this text contain ageism?
+      "He's too young to understand how the real world works."
+    answer: |
+      Yes. This statement stereotypes someone as incapable or naive solely because they are young.
+
+  - question: |
+      Does this text contain ageism?
+      "The company offers special healthcare benefits for employees over 60."
+    answer: |
+      No. This statement describes a policy related to age and does not express prejudice or stereotypes.
+
+  - question: |
+      Does this text contain ageism?
+      "At her age, she probably shouldn't be learning new technologies."
+    answer: |
+      Yes. This assumes that older people are incapable of learning new technologies, which is an age-based stereotype.
+
+  - question: |
+      Does this text contain ageism?
+      "He recently graduated from university and is starting his first job."
+    answer: |
+      No. This simply describes someone's stage of life without making negative assumptions about their age.
+
+  - question: |
+      Does this text contain ageism?
+      "Young people today are lazy and don't want to work."
+    answer: |
+      Yes. This makes a broad negative generalization about an entire age group.
+
+  - question: |
+      Does this text contain ageism?
+      "She has over 30 years of experience and mentors younger employees."
+    answer: |
+      No. This statement positively describes experience and does not contain prejudice based on age.
