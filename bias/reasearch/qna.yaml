@@ -1,89 +1,63 @@
-version: 3
+version: 2
 created_by: Asser Ismail
-domain: bias
-
+task_description: Classify whether a statement contains research bias or is a neutral description of a study, data, or findings.
 seed_examples:
+  - question: |
+      Does this text contain research bias?
+      "Only the results that supported the hypothesis were included in the final report."
+    answer: |
+      Yes. This excludes contradictory evidence, which reflects confirmation bias.
 
-  - context: |
-      Research bias refers to systematic errors that influence the
-      design, analysis, or interpretation of scientific studies.
-      Bias can occur when researchers selectively interpret evidence,
-      design studies with unrepresentative samples, or report results
-      in ways that favor a specific conclusion.
-    questions_and_answers:
-      - question: |
-          Does this text contain research bias?
-          "Only the results that supported the hypothesis were included in the final report."
-        answer: |
-          Yes. Excluding contradictory evidence suggests confirmation bias
-          in the reporting of results.
-      - question: |
-          Does this text contain research bias?
-          "The study surveyed 500 participants from multiple regions."
-        answer: |
-          No. This sentence describes the sample size and methodology
-          without indicating biased interpretation.
-      - question: |
-          Does this text contain research bias?
-          "The findings clearly prove that the theory is correct."
-        answer: |
-          Yes. Scientific results rarely "prove" a theory completely, so
-          this language suggests overconfident interpretation of results.
+  - question: |
+      Does this text contain research bias?
+      "The study surveyed 500 participants across multiple regions."
+    answer: |
+      No. This is a neutral description of the study methodology.
 
-  - context: |
-      Selection bias occurs when the participants or data selected for a
-      study are not representative of the broader population. This can
-      lead to conclusions that do not accurately reflect real-world
-      conditions.
-    questions_and_answers:
-      - question: |
-          Does this text contain research bias?
-          "The nationwide education study surveyed students from a single private school."
-        answer: |
-          Yes. A sample drawn from only one school is unlikely to represent
-          the full population, which introduces selection bias.
-      - question: |
-          Does this text contain research bias?
-          "Participants were randomly selected from several universities."
-        answer: |
-          No. Random sampling across multiple institutions reduces the
-          likelihood of selection bias.
-      - question: |
-          Does this text contain research bias?
-          "The survey included only participants who agreed with the study's assumptions."
-        answer: |
-          Yes. Excluding participants with differing views introduces bias
-          into the results.
+  - question: |
+      Does this text contain research bias?
+      "The findings clearly prove that the theory is correct."
+    answer: |
+      Yes. The phrase "clearly prove" suggests overconfidence and biased interpretation of results.
 
-  - context: |
-      Publication bias occurs when studies with positive or statistically
-      significant results are more likely to be published than studies
-      with negative or inconclusive findings. This can distort the
-      scientific literature and affect how evidence is interpreted.
-    questions_and_answers:
-      - question: |
-          Does this text contain research bias?
-          "Studies showing negative results were excluded from the analysis."
-        answer: |
-          Yes. Removing negative results introduces publication bias and
-          may distort conclusions.
-      - question: |
-          Does this text contain research bias?
-          "The paper discusses both the strengths and limitations of the experiment."
-        answer: |
-          No. Acknowledging limitations suggests a balanced research report.
-      - question: |
-          Does this text contain research bias?
-          "The journal tends to publish studies with significant positive findings."
-        answer: |
-          Yes. Favoring only positive results reflects publication bias.
+  - question: |
+      Does this text contain research bias?
+      "Participants were randomly selected from several universities."
+    answer: |
+      No. Random sampling helps reduce bias and is described neutrally.
 
-document_outline: >
-  Overview of research bias including selection bias, confirmation bias,
-  publication bias, and interpretation bias in scientific studies.
+  - question: |
+      Does this text contain research bias?
+      "The nationwide study only included participants from one private school."
+    answer: |
+      Yes. This introduces selection bias because the sample is not representative.
 
-document:
-  repo: https://github.com/CSC392-CSC492-Building-AI-ML-systems/RedHat-x-IBM-InstructLab-Winter2026
-  commit: 
-  patterns:
-    - "documents/research.md"
+  - question: |
+      Does this text contain research bias?
+      "The paper discusses both the strengths and limitations of the experiment."
+    answer: |
+      No. Acknowledging limitations suggests a balanced and unbiased report.
+
+  - question: |
+      Does this text contain research bias?
+      "Studies with negative results were excluded from the analysis."
+    answer: |
+      Yes. This reflects publication bias by ignoring unfavorable results.
+
+  - question: |
+      Does this text contain research bias?
+      "The experiment measured reaction time under controlled conditions."
+    answer: |
+      No. This is a factual description of the experiment.
+
+  - question: |
+      Does this text contain research bias?
+      "The data strongly supports our conclusion and leaves no room for doubt."
+    answer: |
+      Yes. This language suggests biased interpretation and overconfidence.
+
+  - question: |
+      Does this text contain research bias?
+      "The results showed a slight increase in performance after the treatment."
+    answer: |
+      No. This is a neutral and cautious description of findings.
