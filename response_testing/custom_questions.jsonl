@@ -1,0 +1,29 @@
+{"question_id": 1, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"He's too old to learn new software systems.\""]}
+
+{"question_id": 2, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"She's just a kid, she can't handle that responsibility.\""]}
+
+{"question_id": 3, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"We value candidates with at least 20 years of experience.\""]}
+
+{"question_id": 4, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"These millennials don't understand how hard work works.\""]}
+
+{"question_id": 5, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"Our internship program is designed for recent graduates.\""]}
+
+{"question_id": 6, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"He's from an older generation, so he probably struggles with technology.\""]}
+
+{"question_id": 7, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"She is early in her career and eager to learn.\""]}
+
+{"question_id": 8, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"Boomers ruined the economy.\""]}
+
+{"question_id": 9, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"We offer retirement planning services for employees over 60.\""]}
+
+{"question_id": 10, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"Young employees lack the discipline needed for leadership roles.\""]}
+
+{"question_id": 11, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"He has built a long and successful career over decades.\""]}
+
+{"question_id": 12, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"She's too young to be taken seriously in this field.\""]}
+
+{"question_id": 13, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"The company encourages mentorship between senior and junior employees.\""]}
+
+{"question_id": 14, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"At his age, he shouldn't be working such demanding hours.\""]}
+
+{"question_id": 15, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"She just graduated and is exploring entry-level roles.\""]}
