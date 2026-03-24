@@ -2,7 +2,10 @@ import csv
 import json
 import re
 from pathlib import Path
+from openai import OpenAI
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support, classification_report, confusion_matrix
+
+model_client = OpenAI(base_url="http://localhost:8000/v1", api_key="dummy-key-not-needed")
 
 INPUT_CSV = "RedHat-x-IBM-InstructLab-Winter2026/kaggle_testing/data/sexism.csv"
 OUTPUT_JSONL = "results/sexism_eval_results.jsonl"
@@ -16,26 +19,14 @@ USE_SPLIT = None  # e.g. "train", "dev", "test", or None
 # YOUR MODEL CALL
 # =========================
 def call_your_model(prompt: str) -> str:
-    """
-    Replace this with your real model call.
-    Expected output format:
-        Label: SEXISM
-        Explanation: ...
-    or
-        Label: NOT_SEXISM
-        Explanation: ...
-    """
-    text = prompt.lower()
-
-    sexist_keywords = [
-        "bitch", "women are", "hit the wall", "stupid woman",
-        "feminazi", "girls are", "she belongs"
-    ]
-
-    if any(word in text for word in sexist_keywords):
-        return "Label: SEXISM\nExplanation: Contains sexist language."
-
-    return "Label: NOT_SEXISM\nExplanation: No clear sexism."
+    response = model_client.chat.completions.create(
+        model="ggml-model-f16.gguf",
+        messages=[
+            {"role": "system", "content": "You are a bias detection assistant."},
+            {"role": "user", "content": prompt}
+        ]
+    )
+    return response.choices[0].message.content
 
 
 # =========================

@@ -2,7 +2,10 @@ import csv
 import json
 import re
 from pathlib import Path
+from openai import OpenAI
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support, classification_report, confusion_matrix
+
+model_client = OpenAI(base_url="http://localhost:8000/v1", api_key="dummy-key-not-needed")
 
 INPUT_CSV = "RedHat-x-IBM-InstructLab-Winter2026/kaggle_testing/data/political_bias.csv"
 OUTPUT_JSONL = "results/political_bias_eval_results.jsonl"
@@ -16,27 +19,14 @@ USE_SPLIT = None  # only use this if your dataset has a split column
 # YOUR MODEL CALL
 # =========================
 def call_your_model(prompt: str) -> str:
-    """
-    Replace this with your real model call.
-    Expected output format:
-        Label: BIAS
-        Explanation: ...
-    or
-        Label: NOT_BIAS
-        Explanation: ...
-    """
-    text = prompt.lower()
-
-    bias_keywords = [
-        "far left", "far right", "left-wing propaganda", "right-wing propaganda",
-        "liberal agenda", "conservative agenda", "radical left", "extreme right",
-        "biased media", "partisan attack"
-    ]
-
-    if any(word in text for word in bias_keywords):
-        return "Label: BIAS\nExplanation: Contains politically biased or partisan language."
-
-    return "Label: NOT_BIAS\nExplanation: No clear political bias."
+    response = model_client.chat.completions.create(
+        model="ggml-model-f16.gguf",
+        messages=[
+            {"role": "system", "content": "You are a bias detection assistant."},
+            {"role": "user", "content": prompt}
+        ]
+    )
+    return response.choices[0].message.content
 
 
 # =========================
@@ -133,7 +123,7 @@ def load_dataset(input_csv: str, use_split: str | None = None):
 def main():
     dataset = load_dataset(INPUT_CSV, USE_SPLIT)
 
-    Path("results").mkdir(exist_ok=True)
+    Path(OUTPUT_JSONL).parent.mkdir(exist_ok=True)
 
     y_true = []
     y_pred = []
