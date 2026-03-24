@@ -1,0 +1,91 @@
+version: 3
+task_description: Teach the model to identify and categorize ethical bias bias in text.
+created_by: Shaarif Ali Syed
+seed_examples:
+  # Racial/Ethnic Bias
+  - question: |
+      Analyze the following text for bias: "Applicants with non-Western names are rated lower for job interviews by the AI system."
+    answer: |
+      This is racial/ethnic bias. The AI unfairly discriminates based on the candidate's name, which is linked to ethnicity, rather than evaluating qualifications objectively.
+
+  - question: |
+      Analyze the following text for bias: "Students from certain ethnic backgrounds are assumed to perform worse on standardized tests."
+    answer: |
+      This is racial/ethnic bias. The statement stereotypes students based on ethnicity, generalizing performance instead of assessing individual abilities.
+
+  - question: |
+      Analyze the following text for bias: "People from that region tend to be lazy and rely on government support. They don't value hard work like others do."
+    answer: |
+      This is racial/ethnic or regional bias. It generalizes negative traits to an entire group unfairly and promotes harmful stereotypes.
+
+  # Cultural / Religious Bias
+  - question: |
+      Analyze the following text for bias: "The chatbot assumes everyone celebrates Christmas and ignores other cultural holidays."
+    answer: |
+      This is cultural/religious bias. The AI assumes a single cultural norm and fails to recognize the diversity of user's beliefs and practices.
+
+  - question: |
+      Analyze the following text for bias: "The AI assumes all Muslim holidays are the same and ignores religious diversity."
+    answer: |
+      This is cultural/religious bias. The AI generalizes all Muslim users into one group, overlooking variations in religious practices.
+
+  # Language / Dialect Bias
+  - question: |
+      Analyze the following text for bias: "An AI assistant often misinterprets speakers with regional accents."
+    answer: |
+      This is language/dialect bias. The AI unfairly disadvantages users based on their accent, rather than understanding them equally.
+
+  - question: |
+      Analyze the following text for bias: "Candidates who speak English with a strong accent are less likely to be considered for promotion."
+    answer: |
+      This is language/dialect bias. The statement penalizes individuals for speaking with an accent, which is unrelated to their actual skills or qualifications.
+
+  # Socioeconomic Bias
+  - question: |
+      Analyze the following text for bias: "An AI system rejects job applications from people with gaps in employment history due to caregiving."
+    answer: |
+      This is socioeconomic bias. It unfairly penalizes candidates for caregiving responsibilities, which are often linked to social and economic circumstances rather than ability.
+
+  - question: |
+      Analyze the following text for bias: "The AI assumes employees from rural areas are less educated and less competent."
+    answer: |
+      This is socioeconomic bias. The AI generalizes characteristics based on geographic and likely socioeconomic background, unfairly judging individuals rather than their qualifications.
+
+  # Disability Bias
+  - question: |
+      Analyze the following text for bias: "An AI resume screener automatically flags applications from people with physical disabilities as less capable."
+    answer: |
+      This is disability bias. The AI unfairly assumes physical disabilities equate to lower competence, rather than evaluating candidates based on skills and experience.
+
+  - question: |
+      Analyze the following text for bias: "A chatbot refuses to suggest fitness programs for people with physical disabilities."
+    answer: |
+      This is disability bias. The AI makes assumptions about ability based on disability, rather than providing options appropriate for individual needs.
+
+  # Appearance / Body Bias
+  - question: |
+      Analyze the following text for bias: "AI-generated ads show attractive people in leadership positions but overweight people in support roles."
+    answer: |
+      This is appearance/body bias. The AI promotes stereotypes about physical appearance and professional capability, disadvantaging certain body types.
+
+  - question: |
+      Analyze the following text for bias: "Candidates with unconventional hairstyles or tattoos are rated as less professional."
+    answer: |
+      This is appearance/body bias. The AI unfairly judges professionalism based on appearance rather than skills or experience.
+
+  # Intersectional Bias
+  - question: |
+      Analyze the following text for bias: "The AI assumes women of color are less competent managers than white men."
+    answer: |
+      This is intersectional bias (race and gender). The AI unfairly stereotypes based on both gender and race, combining multiple biases in a single assessment.
+
+  - question: |
+      Analyze the following text for bias: "Black women applicants are assumed to be aggressive leaders, while white men are seen as confident."
+    answer: |
+      This is intersectional bias (race and gender). It applies conflicting stereotypes to different groups, reinforcing both racial and gender bias.
+
+  # Neutral Example
+  - question: |
+      Analyze the following text for bias: "Applicants with diverse educational backgrounds are evaluated fairly based on their skills."
+    answer: |
+      No bias detected. The AI evaluates candidates based on qualifications without applying stereotypes or assumptions.

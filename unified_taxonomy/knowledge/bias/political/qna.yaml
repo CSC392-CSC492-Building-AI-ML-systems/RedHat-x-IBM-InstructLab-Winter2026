@@ -1,0 +1,161 @@
+version: 3
+created_by: Zelimir Stajic
+domain: bias
+
+seed_examples:
+
+  - context: |
+      Political bias refers to the bias or manipulation of information to
+      favor a particular political position, party, or candidate. Closely
+      associated with media bias, it often describes how journalists,
+      television programs, or news organizations portray political figures
+      or policy issues. Bias emerges in a political context when individuals
+      engage in an inability or an unwillingness to understand a politically
+      opposing point of view. With an understanding of political bias comes
+      the acknowledgment of its violation of expected political neutrality.
+    questions_and_answers:
+      - question: |
+          Does this text contain political bias?
+          "The corrupt and incompetent administration has once again failed the people."
+        answer: |
+          Yes. The text uses loaded language such as "corrupt" and "incompetent,"
+          which expresses a strongly negative judgment toward a political group
+          rather than presenting neutral information.
+      - question: |
+          Does this text contain political bias?
+          "The senator introduced a new healthcare reform bill on Tuesday."
+        answer: |
+          No. This is a factual description of a political action and does not
+          include evaluative or partisan language.
+      - question: |
+          Does this text contain political bias?
+          "Only an idiot would vote for that party."
+        answer: |
+          Yes. This statement insults supporters of a political party and shows
+          hostility toward a political group, which indicates political bias.
+
+  - context: |
+      Political bias exists primarily through the concept of framing.
+      Framing is the social construction of political or social issues in
+      ways that emphasize certain aspects over others, often creating a
+      positive or negative representation of events, individuals, or
+      policies. In this context, political leaders and parties use framing
+      to highlight specific problems while offering solutions that align
+      with and promote political agendas. This makes their stance appear
+      more favorable and their policies seem like the logical or necessary
+      course of action. The framing effect looks at situations in which
+      people are only presented with options within two frames, one
+      presented negatively and the other positively.
+    questions_and_answers:
+      - question: |
+          Does this text contain political bias?
+          "The bold reform finally fixes years of disastrous leadership."
+        answer: |
+          Yes. Words like "bold" and "disastrous" introduce evaluative language
+          that favors one political position while criticizing another.
+      - question: |
+          Does this text contain political bias?
+          "The policy aims to reduce taxes for middle-income families."
+        answer: |
+          No. This statement describes a policy without expressing favoritism,
+          hostility, or judgment toward a political group.
+      - question: |
+          Does this text contain political bias?
+          "The visionary leadership of the governor has saved the state from economic disaster."
+        answer: |
+          Yes. Words such as "visionary leadership" and "saved the state" introduce strong praise that reflects political favoritism rather than neutral reporting.
+
+  - context: |
+      Partisan bias exists in the media when reporters serve and create
+      the leaning of a particular political party. When journalists
+      intentionally or unintentionally show material in a way that
+      prioritizes one political ideology or party over another, they are
+      engaging in bias and affecting the public's perception of political
+      events and individuals. Story selection, framing, tone, and the
+      frequency of criticism or support of specific parties or people are
+      all examples of partisan bias. According to a Gallup study, 62% of
+      Americans think the media favors one political party.
+    questions_and_answers:
+      - question: |
+          Does this text contain political bias?
+          "The reckless policy shows how little the government cares about ordinary people."
+        answer: |
+          Yes. The use of the word "reckless" expresses a negative judgment toward a political decision rather than presenting neutral information.
+      - question: |
+          Does this text contain political bias?
+          "The president announced a new economic plan during a press conference."
+        answer: |
+          No. This statement reports a political event without expressing favoritism or criticism.
+      - question: |
+          Does this text contain political bias?
+          "That party has always cared more about corporations than working families."
+        answer: |
+          Yes. This statement makes a sweeping negative claim about a political party and reflects partisan judgment.
+
+  - context: |
+      Confirmation bias is a cognitive bias that favours and seeks
+      information that affirms pre-existing beliefs and opinions. When set
+      in a political atmosphere, individuals with like-minded political
+      beliefs will seek and affirm their opinions, discounting contradictory
+      information. A recent meta-analysis attempted to compare levels of
+      confirmation bias among liberals and conservatives in the United
+      States and found that both groups were roughly equally biased. People
+      actively evaluate and interpret information to support their
+      preexisting opinions rather than simply taking it in. As people get
+      more set in their ways and less open to hearing different points of
+      view, this dynamic adds to the polarization seen in modern politics.
+    questions_and_answers:
+      - question: |
+          Does this text contain political bias?
+          "Both candidates presented their economic proposals during the debate."
+        answer: |
+          No. This sentence neutrally describes a political event without expressing bias toward either side.
+      - question: |
+          Does this text contain political bias?
+          "Voter turnout increased by 5 percent compared to the previous election."
+        answer: |
+          No. This statement presents factual information about an election without favoring or criticizing any political group.
+      - question: |
+          Does this text contain political bias?
+          "Anyone who supports that policy clearly hasn't done their research."
+        answer: |
+          Yes. This dismisses supporters of a political position as uninformed, reflecting bias against those who hold a different political view.
+
+  - context: |
+      Political neutrality is the counteraction to political bias, looking
+      to ensure the ability of public servants to carry out any official
+      duties impartially, regardless of their political beliefs. In areas
+      like media coverage, legal and bureaucratic decisions and academic
+      teachings, the need for taking corrective action against politically
+      biased actions is the foundation of neutral enforcement. Research
+      suggests that nonpartisanship is favoured over political bias, with
+      Republicans, Independents, and Democrats preferring to get their news
+      from politically neutral media.
+    questions_and_answers:
+      - question: |
+          Does this text contain political bias?
+          "The election results were certified by the state board following standard procedures."
+        answer: |
+          No. This is a neutral description of an official process and does not express any political favoritism or criticism.
+      - question: |
+          Does this text contain political bias?
+          "The self proclaimed 'neutral' media clearly advocates for the opposition"
+        answer: |
+          Yes. This statement implies that a neutral reporting  media is secretly biased.
+      - question: |
+          Does this text contain political bias?
+          "The committee reviewed proposals from both parties before making a recommendation."
+        answer: |
+          No. This describes a balanced process without favoring either political side.
+
+document_outline: >
+  Overview of political bias including its types such as concision bias,
+  coverage bias, confirmation bias, false consensus bias, speculative content,
+  gatekeeping bias, and partisan bias. Also covers political neutrality,
+  framing effects, evidence of political bias in search engines,
+  and political bias in the media.
+document:
+  repo: https://github.com/CSC392-CSC492-Building-AI-ML-systems/RedHat-x-IBM-InstructLab-Winter2026
+  commit: e1e5004534b644d5f438eae5f2058057cd826a20
+  patterns:
+    - "documents/political.md"
