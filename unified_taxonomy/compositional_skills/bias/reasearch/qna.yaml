@@ -1,0 +1,54 @@
+version: 3
+created_by: Asser Ismail
+task_description: Teach the model to identify reasearch bias.
+seed_examples:
+  - question: |
+      Does this text contain research bias?
+      "Only the results that supported the hypothesis were included in the final report."
+    answer: |
+      Yes. This excludes contradictory evidence, which reflects confirmation bias.
+  - question: |
+      Does this text contain research bias?
+      "The study surveyed 500 participants across multiple regions."
+    answer: |
+      No. This is a neutral description of the study methodology.
+  - question: |
+      Does this text contain research bias?
+      "The findings clearly prove that the theory is correct."
+    answer: |
+      Yes. The phrase "clearly prove" suggests overconfidence and biased interpretation of results.
+  - question: |
+      Does this text contain research bias?
+      "Participants were randomly selected from several universities."
+    answer: |
+      No. Random sampling helps reduce bias and is described neutrally.
+  - question: |
+      Does this text contain research bias?
+      "The nationwide study only included participants from one private school."
+    answer: |
+      Yes. This introduces selection bias because the sample is not representative.
+  - question: |
+      Does this text contain research bias?
+      "The paper discusses both the strengths and limitations of the experiment."
+    answer: |
+      No. Acknowledging limitations suggests a balanced and unbiased report.
+  - question: |
+      Does this text contain research bias?
+      "Studies with negative results were excluded from the analysis."
+    answer: |
+      Yes. This reflects publication bias by ignoring unfavorable results.
+  - question: |
+      Does this text contain research bias?
+      "The experiment measured reaction time under controlled conditions."
+    answer: |
+      No. This is a factual description of the experiment.
+  - question: |
+      Does this text contain research bias?
+      "The data strongly supports our conclusion and leaves no room for doubt."
+    answer: |
+      Yes. This language suggests biased interpretation and overconfidence.
+  - question: |
+      Does this text contain research bias?
+      "The results showed a slight increase in performance after the treatment."
+    answer: |
+      No. This is a neutral and cautious description of findings.

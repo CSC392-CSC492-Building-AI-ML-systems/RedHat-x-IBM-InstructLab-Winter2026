@@ -1,110 +1,113 @@
 import csv
 import json
 import re
+import time
+import concurrent.futures
 from pathlib import Path
 from openai import OpenAI
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support, classification_report, confusion_matrix
 
+BASE_DIR = Path(__file__).resolve().parent
+INPUT_CSV = BASE_DIR / "data" / "political_bias.csv"
+OUTPUT_JSONL = BASE_DIR / "results" / "political_bias_eval_results.jsonl"
+SUMMARY_JSON = BASE_DIR / "results" / "political_bias_eval_summary.json"
+
+MODEL_ID = "ggml-model-f16.gguf"
+
 model_client = OpenAI(base_url="http://localhost:8000/v1", api_key="dummy-key-not-needed")
 
-INPUT_CSV = "RedHat-x-IBM-InstructLab-Winter2026/kaggle_testing/data/political_bias.csv"
-OUTPUT_JSONL = "results/political_bias_eval_results.jsonl"
-SUMMARY_JSON = "results/political_bias_eval_summary.json"
-
-# optional filter: set to None to use all rows
-USE_SPLIT = None  # only use this if your dataset has a split column
-
+USE_SPLIT = None  
 
 # =========================
 # YOUR MODEL CALL
 # =========================
-def call_your_model(prompt: str) -> str:
-    response = model_client.chat.completions.create(
-        model="ggml-model-f16.gguf",
-        messages=[
-            {"role": "system", "content": "You are a bias detection assistant."},
-            {"role": "user", "content": prompt}
-        ]
-    )
-    return response.choices[0].message.content
+def call_your_model(prompt: str, retries=5) -> str:
+    for attempt in range(retries):
+        try:
+            response = model_client.chat.completions.create(
+                model=MODEL_ID,
+                messages=[
+                    {"role": "system", "content": "You are a bias detection assistant."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.1
+            )
+            return response.choices[0].message.content
+        except Exception as e:
+            if attempt == retries - 1:
+                print(f"Failed after {retries} attempts: {e}")
+                return "unknown"
+            time.sleep(2)
 
 
 # =========================
-# PROMPT
+# PROMPT (ALIGNED WITH QNA.YAML)
 # =========================
 def build_prompt(text: str) -> str:
-    return f"""Determine whether the following text contains political bias.
+    # Matches the exact string format from your InstructLab training
+    return f'Does this text contain political bias?\n"{text}"'
 
-Treat any non-center political framing as BIAS.
+# =========================
+# NORMALIZATION (ALIGNED WITH QNA.YAML)
+# =========================
+def normalize_model_label(answer: str) -> str:
+    text = answer.strip().lower()
 
-Text: "{text}"
+    # The model was trained to start answers with "Yes." or "No."
+    if text.startswith("yes"):
+        return "bias"
+    if text.startswith("no"):
+        return "not_bias"
 
-Return exactly:
-Label: BIAS or NOT_BIAS
-Explanation: <short reason>"""
+    # Fallback catch-alls just in case it formats weirdly
+    if any(x in text for x in ["not_bias", "not bias", "no bias", "center"]):
+        return "not_bias"
+    if "bias" in text or "biased" in text:
+        return "bias"
 
+    return "unknown"
 
 # =========================
 # NORMALIZATION
 # =========================
 def normalize_gold_label(raw_label: str) -> str:
     label = raw_label.strip().lower()
-
     if label == "center":
         return "not_bias"
-
-    if label in {
-        "lean left", "left", "far left",
-        "lean right", "right", "far right",
-        "biased"
-    }:
+    if label in {"lean left", "left", "far left", "lean right", "right", "far right", "biased"}:
         return "bias"
-
     return "unknown"
-
 
 def normalize_model_label(answer: str) -> str:
     text = answer.strip().lower()
-
-    # try to extract the explicit label line first
     match = re.search(r"label:\s*(.+)", text)
     if match:
         label_text = match.group(1).strip()
     else:
         label_text = text
 
-    # check negative class first
     if any(x in label_text for x in ["not_bias", "not bias", "no bias", "center"]):
         return "not_bias"
-
     if "bias" in label_text or "biased" in label_text:
         return "bias"
-
     return "unknown"
 
 
 # =========================
 # DATA LOADING
 # =========================
-def load_dataset(input_csv: str, use_split: str | None = None):
+def load_dataset(input_csv: Path, use_split: str | None = None):
     rows = []
-
     with open(input_csv, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
-
         has_split = "split" in reader.fieldnames
-
         for row in reader:
             text = row.get("Text", "").strip()
-
-            # SKIP BAD ROWS
             if not text or text.lower() == "error fetching article.":
                 continue
-
             if use_split is not None and has_split:
                 if row["split"].strip().lower() != use_split.lower():
                     continue
-
             rows.append({
                 "id": row.get("Title", ""),
                 "text": text,
@@ -113,53 +116,55 @@ def load_dataset(input_csv: str, use_split: str | None = None):
                 "raw_bias": row.get("Bias", ""),
                 "split": row.get("split", "") if has_split else "",
             })
-
     return rows
+
+def process_row(item):
+    prompt = build_prompt(item["text"])
+    model_answer = call_your_model(prompt)
+    pred_label = normalize_model_label(model_answer)
+    
+    return {
+        "id": item["id"],
+        "text": item["text"],
+        "gold_label": item["gold_label"],
+        "pred_label": pred_label,
+        "correct": pred_label == item["gold_label"],
+        "source": item["source"],
+        "raw_bias": item["raw_bias"],
+        "split": item["split"],
+        "model_answer": model_answer,
+    }
 
 
 # =========================
 # MAIN EVAL
 # =========================
 def main():
-    dataset = load_dataset(INPUT_CSV, USE_SPLIT)
+    print("Loading dataset...")
+    full_dataset = load_dataset(INPUT_CSV, USE_SPLIT)
+    
+    # Slice the dataset to the first 50 rows for a quick test
+    dataset = full_dataset[:50]
+    print(f"Loaded {len(full_dataset)} valid rows. Sliced to {len(dataset)} for quick evaluation...")
 
-    Path(OUTPUT_JSONL).parent.mkdir(exist_ok=True)
+    OUTPUT_JSONL.parent.mkdir(exist_ok=True)
+
+    results = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+        results = list(executor.map(process_row, dataset))
 
     y_true = []
     y_pred = []
     unknown_predictions = 0
-    output_rows = []
-
-    for item in dataset:
-
-
-        prompt = build_prompt(item["text"])
-        model_answer = call_your_model(prompt)
-        pred_label = normalize_model_label(model_answer)
-
-        if pred_label == "unknown":
-            unknown_predictions += 1
-
-        record = {
-            "id": item["id"],
-            "text": item["text"],
-            "gold_label": item["gold_label"],
-            "pred_label": pred_label,
-            "correct": pred_label == item["gold_label"],
-            "source": item["source"],
-            "raw_bias": item["raw_bias"],
-            "split": item["split"],
-            "model_answer": model_answer,
-        }
-        output_rows.append(record)
-
-        if item["gold_label"] != "unknown" and pred_label != "unknown":
-            y_true.append(item["gold_label"])
-            y_pred.append(pred_label)
 
     with open(OUTPUT_JSONL, "w", encoding="utf-8") as f:
-        for row in output_rows:
+        for row in results:
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
+            if row["pred_label"] == "unknown":
+                unknown_predictions += 1
+            if row["gold_label"] != "unknown" and row["pred_label"] != "unknown":
+                y_true.append(row["gold_label"])
+                y_pred.append(row["pred_label"])
 
     if not y_true:
         print("No valid predictions to score.")
@@ -167,17 +172,13 @@ def main():
 
     accuracy = accuracy_score(y_true, y_pred)
     precision, recall, f1, _ = precision_recall_fscore_support(
-        y_true,
-        y_pred,
-        average="binary",
-        pos_label="bias",
-        zero_division=0,
+        y_true, y_pred, average="binary", pos_label="bias", zero_division=0
     )
     cm = confusion_matrix(y_true, y_pred, labels=["bias", "not_bias"]).tolist()
     report = classification_report(y_true, y_pred, zero_division=0)
 
     summary = {
-        "input_csv": INPUT_CSV,
+        "input_csv": str(INPUT_CSV),
         "evaluated_split": USE_SPLIT,
         "total_rows_loaded": len(dataset),
         "total_scored": len(y_true),
@@ -193,6 +194,7 @@ def main():
     with open(SUMMARY_JSON, "w", encoding="utf-8") as f:
         json.dump(summary, f, indent=2)
 
+    print(f"\n--- EVALUATION COMPLETE ---")
     print(f"Rows loaded:       {len(dataset)}")
     print(f"Rows scored:       {len(y_true)}")
     print(f"Unknown predicted: {unknown_predictions}")
@@ -202,8 +204,6 @@ def main():
     print(f"F1 (bias):         {f1:.4f}")
     print("\nClassification report:\n")
     print(report)
-    print("Confusion matrix [bias, not_bias]:")
-    print(cm)
 
 
 if __name__ == "__main__":

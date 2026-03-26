@@ -1,0 +1,18 @@
+datasets:
+- path: node_datasets_2026-03-12T22_20_50/compositional_skills_bias_ageism.jsonl
+  sampling_size: 30
+- path: node_datasets_2026-03-12T22_20_50/compositional_skills_bias_marketing.jsonl
+  sampling_size: 30
+- path: node_datasets_2026-03-12T22_20_50/compositional_skills_bias_gender bias.jsonl
+  sampling_size: 30
+- path: node_datasets_2026-03-12T22_20_50/compositional_skills_bias_reasearch.jsonl
+  sampling_size: 30
+- path: node_datasets_2026-03-12T22_20_50/compositional_skills_bias_ethical bias.jsonl
+  sampling_size: 30
+- path: node_datasets_2026-03-12T22_20_50/compositional_skills_bias_political.jsonl
+  sampling_size: 30
+metadata:
+  sys_prompt: I am an advanced AI language model designed to assist you with a wide
+    range of tasks and provide helpful, clear, and accurate responses. My primary
+    role is to serve as a chat assistant, engaging in natural, conversational dialogue,
+    answering questions, generating ideas, and offering support across various topics.

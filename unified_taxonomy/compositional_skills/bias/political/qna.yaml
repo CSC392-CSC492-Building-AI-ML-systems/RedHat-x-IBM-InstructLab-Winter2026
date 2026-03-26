@@ -1,0 +1,65 @@
+version: 3
+created_by: Zelimir Stajic
+task_description: Teach the model to identify political bias.
+seed_examples:
+  - question: |
+      Does this text contain political bias?
+      "The corrupt and incompetent administration has once again failed the people."
+    answer: |
+      Yes. The text uses loaded language such as "corrupt" and "incompetent,"
+      which expresses a strongly negative judgment toward a political group
+      rather than presenting neutral information.
+  - question: |
+      Does this text contain political bias?
+      "The senator introduced a new healthcare reform bill on Tuesday."
+    answer: |
+      No. This is a factual description of a political action and does not
+      include evaluative or partisan language.
+  - question: |
+      Does this text contain political bias?
+      "Only an idiot would vote for that party."
+    answer: |
+      Yes. This statement insults supporters of a political party and shows
+      hostility toward a political group, which indicates political bias.
+  - question: |
+      Does this text contain political bias?
+      "The policy aims to reduce taxes for middle-income families."
+    answer: |
+      No. This statement describes a policy without expressing favoritism,
+      hostility, or judgment toward a political group.
+  - question: |
+      Does this text contain political bias?
+      "The bold reform finally fixes years of disastrous leadership."
+    answer: |
+      Yes. Words like "bold" and "disastrous" introduce evaluative language
+      that favors one political position while criticizing another.
+  - question: |
+      Does this text contain political bias?
+      "The reckless policy shows how little the government cares about ordinary people."
+    answer: |
+      Yes. The use of the word "reckless" expresses a negative judgment toward a political decision rather than presenting neutral information.
+  - question: |
+      Does this text contain political bias?
+      "The president announced a new economic plan during a press conference."
+    answer: |
+      No. This statement reports a political event without expressing favoritism or criticism.
+  - question: |
+      Does this text contain political bias?
+      "That party has always cared more about corporations than working families."
+    answer: |
+      Yes. This statement makes a sweeping negative claim about a political party and reflects partisan judgment.
+  - question: |
+      Does this text contain political bias?
+      "Both candidates presented their economic proposals during the debate."
+    answer: |
+      No. This sentence neutrally describes a political event without expressing bias toward either side.
+  - question: |
+      Does this text contain political bias?
+      "The visionary leadership of the governor has saved the state from economic disaster."
+    answer: |
+      Yes. Words such as "visionary leadership" and "saved the state" introduce strong praise that reflects political favoritism rather than neutral reporting.
+  - question: |
+      Does this text contain political bias?
+      "Voter turnout increased by 5 percent compared to the previous election."
+    answer: |
+      No. This statement presents factual information about an election without favoring or criticizing any political group.

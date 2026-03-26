@@ -1,0 +1,25 @@
+{
+  "input_csv": "/home/remy/instructlab-workspace/CSC398/kaggle_testing/data/political_bias.csv",
+  "evaluated_split": null,
+  "total_rows_loaded": 50,
+  "total_scored": 48,
+  "unknown_predictions": 2,
+  "accuracy": 1.0,
+  "precision_bias": 1.0,
+  "recall_bias": 1.0,
+  "f1_bias": 1.0,
+  "confusion_matrix_labels": [
+    "bias",
+    "not_bias"
+  ],
+  "confusion_matrix": [
+    [
+      48,
+      0
+    ],
+    [
+      0,
+      0
+    ]
+  ]
+}

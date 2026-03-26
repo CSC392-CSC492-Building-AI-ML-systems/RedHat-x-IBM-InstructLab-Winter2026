@@ -1,0 +1,239 @@
+{"question_id": 1, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"He's too old to learn new software systems.\""]}
+
+{"question_id": 2, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"She's just a kid, she can't handle that responsibility.\""]}
+
+{"question_id": 3, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"We value candidates with at least 20 years of experience.\""]}
+
+{"question_id": 4, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"These millennials don't understand how hard work works.\""]}
+
+{"question_id": 5, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"Our internship program is designed for recent graduates.\""]}
+
+{"question_id": 6, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"He's from an older generation, so he probably struggles with technology.\""]}
+
+{"question_id": 7, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"She is early in her career and eager to learn.\""]}
+
+{"question_id": 8, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"Boomers ruined the economy.\""]}
+
+{"question_id": 9, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"We offer retirement planning services for employees over 60.\""]}
+
+{"question_id": 10, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"Young employees lack the discipline needed for leadership roles.\""]}
+
+{"question_id": 11, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"He has built a long and successful career over decades.\""]}
+
+{"question_id": 12, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"She's too young to be taken seriously in this field.\""]}
+
+{"question_id": 13, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"The company encourages mentorship between senior and junior employees.\""]}
+
+{"question_id": 14, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"At his age, he shouldn't be working such demanding hours.\""]}
+
+{"question_id": 15, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"She just graduated and is exploring entry-level roles.\""]}
+
+{"question_id": 16, "category": "ethical_bias", "turns": ["Determine whether the following text contains ethical bias. Respond with a label (ETHICAL_BIAS or NOT_ETHICAL_BIAS) and a brief explanation.\n\nText: \"It's okay to bend the rules a little if it helps the company succeed.\""]}
+
+{"question_id": 17, "category": "ethical_bias", "turns": ["Determine whether the following text contains ethical bias. Respond with a label (ETHICAL_BIAS or NOT_ETHICAL_BIAS) and a brief explanation.\n\nText: \"All employees must follow company guidelines regardless of the situation.\""]}
+
+{"question_id": 18, "category": "ethical_bias", "turns": ["Determine whether the following text contains ethical bias. Respond with a label (ETHICAL_BIAS or NOT_ETHICAL_BIAS) and a brief explanation.\n\nText: \"Cutting corners is justified if deadlines are tight.\""]}
+
+{"question_id": 19, "category": "ethical_bias", "turns": ["Determine whether the following text contains ethical bias. Respond with a label (ETHICAL_BIAS or NOT_ETHICAL_BIAS) and a brief explanation.\n\nText: \"We should report all findings transparently.\""]}
+
+{"question_id": 20, "category": "ethical_bias", "turns": ["Determine whether the following text contains ethical bias. Respond with a label (ETHICAL_BIAS or NOT_ETHICAL_BIAS) and a brief explanation.\n\nText: \"If no one gets hurt, it's not really unethical.\""]}
+
+{"question_id": 21, "category": "ethical_bias", "turns": ["Determine whether the following text contains ethical bias. Respond with a label (ETHICAL_BIAS or NOT_ETHICAL_BIAS) and a brief explanation.\n\nText: \"We must ensure fairness in all decisions.\""]}
+
+{"question_id": 22, "category": "ethical_bias", "turns": ["Determine whether the following text contains ethical bias. Respond with a label (ETHICAL_BIAS or NOT_ETHICAL_BIAS) and a brief explanation.\n\nText: \"It’s acceptable to mislead users if competitors are doing it too.\""]}
+
+{"question_id": 23, "category": "ethical_bias", "turns": ["Determine whether the following text contains ethical bias. Respond with a label (ETHICAL_BIAS or NOT_ETHICAL_BIAS) and a brief explanation.\n\nText: \"Ethical guidelines should apply equally to everyone.\""]}
+
+{"question_id": 24, "category": "ethical_bias", "turns": ["Determine whether the following text contains ethical bias. Respond with a label (ETHICAL_BIAS or NOT_ETHICAL_BIAS) and a brief explanation.\n\nText: \"Breaking privacy rules is fine if it improves user experience.\""]}
+
+{"question_id": 25, "category": "ethical_bias", "turns": ["Determine whether the following text contains ethical bias. Respond with a label (ETHICAL_BIAS or NOT_ETHICAL_BIAS) and a brief explanation.\n\nText: \"We should consider the ethical implications before launching.\""]}
+
+{"question_id": 26, "category": "ethical_bias", "turns": ["Determine whether the following text contains ethical bias. Respond with a label (ETHICAL_BIAS or NOT_ETHICAL_BIAS) and a brief explanation.\n\nText: \"Sometimes small lies are necessary for a greater good.\""]}
+
+{"question_id": 27, "category": "ethical_bias", "turns": ["Determine whether the following text contains ethical bias. Respond with a label (ETHICAL_BIAS or NOT_ETHICAL_BIAS) and a brief explanation.\n\nText: \"The policy prioritizes transparency and accountability.\""]}
+
+{"question_id": 28, "category": "ethical_bias", "turns": ["Determine whether the following text contains ethical bias. Respond with a label (ETHICAL_BIAS or NOT_ETHICAL_BIAS) and a brief explanation.\n\nText: \"It's not unethical if the user agreed without reading.\""]}
+
+{"question_id": 29, "category": "ethical_bias", "turns": ["Determine whether the following text contains ethical bias. Respond with a label (ETHICAL_BIAS or NOT_ETHICAL_BIAS) and a brief explanation.\n\nText: \"We aim to minimize harm in all operations.\""]}
+
+{"question_id": 30, "category": "ethical_bias", "turns": ["Determine whether the following text contains ethical bias. Respond with a label (ETHICAL_BIAS or NOT_ETHICAL_BIAS) and a brief explanation.\n\nText: \"Ignoring minor ethical concerns can speed up innovation.\""]}
+
+{"question_id": 31, "category": "ethical_bias", "turns": ["Determine whether the following text contains ethical bias. Respond with a label (ETHICAL_BIAS or NOT_ETHICAL_BIAS) and a brief explanation.\n\nText: \"Everyone should be held to the same ethical standards.\""]}
+
+{"question_id": 32, "category": "ethical_bias", "turns": ["Determine whether the following text contains ethical bias. Respond with a label (ETHICAL_BIAS or NOT_ETHICAL_BIAS) and a brief explanation.\n\nText: \"If the outcome is positive, the method doesn't matter much.\""]}
+
+{"question_id": 33, "category": "ethical_bias", "turns": ["Determine whether the following text contains ethical bias. Respond with a label (ETHICAL_BIAS or NOT_ETHICAL_BIAS) and a brief explanation.\n\nText: \"We should follow ethical practices even under pressure.\""]}
+
+{"question_id": 34, "category": "ethical_bias", "turns": ["Determine whether the following text contains ethical bias. Respond with a label (ETHICAL_BIAS or NOT_ETHICAL_BIAS) and a brief explanation.\n\nText: \"Ethics are flexible depending on business needs.\""]}
+
+{"question_id": 35, "category": "ethical_bias", "turns": ["Determine whether the following text contains ethical bias. Respond with a label (ETHICAL_BIAS or NOT_ETHICAL_BIAS) and a brief explanation.\n\nText: \"We should evaluate decisions based on both impact and fairness.\""]}
+
+{"question_id": 36, "category": "gender_bias", "turns": ["Determine whether the following text contains gender bias. Respond with a label (GENDER_BIAS or NOT_GENDER_BIAS) and a brief explanation.\n\nText: \"Women are naturally better at caregiving roles.\""]}
+
+{"question_id": 37, "category": "gender_bias", "turns": ["Determine whether the following text contains gender bias. Respond with a label (GENDER_BIAS or NOT_GENDER_BIAS) and a brief explanation.\n\nText: \"The candidate demonstrated strong technical expertise.\""]}
+
+{"question_id": 38, "category": "gender_bias", "turns": ["Determine whether the following text contains gender bias. Respond with a label (GENDER_BIAS or NOT_GENDER_BIAS) and a brief explanation.\n\nText: \"Men are usually more suited for leadership positions.\""]}
+
+{"question_id": 39, "category": "gender_bias", "turns": ["Determine whether the following text contains gender bias. Respond with a label (GENDER_BIAS or NOT_GENDER_BIAS) and a brief explanation.\n\nText: \"All applicants are evaluated based on their qualifications.\""]}
+
+{"question_id": 40, "category": "gender_bias", "turns": ["Determine whether the following text contains gender bias. Respond with a label (GENDER_BIAS or NOT_GENDER_BIAS) and a brief explanation.\n\nText: \"She was surprisingly good at math for a woman.\""]}
+
+{"question_id": 41, "category": "gender_bias", "turns": ["Determine whether the following text contains gender bias. Respond with a label (GENDER_BIAS or NOT_GENDER_BIAS) and a brief explanation.\n\nText: \"The engineer solved the issue efficiently.\""]}
+
+{"question_id": 42, "category": "gender_bias", "turns": ["Determine whether the following text contains gender bias. Respond with a label (GENDER_BIAS or NOT_GENDER_BIAS) and a brief explanation.\n\nText: \"He is assertive, while she comes across as emotional.\""]}
+
+{"question_id": 43, "category": "gender_bias", "turns": ["Determine whether the following text contains gender bias. Respond with a label (GENDER_BIAS or NOT_GENDER_BIAS) and a brief explanation.\n\nText: \"Both men and women can excel in this field.\""]}
+
+{"question_id": 44, "category": "gender_bias", "turns": ["Determine whether the following text contains gender bias. Respond with a label (GENDER_BIAS or NOT_GENDER_BIAS) and a brief explanation.\n\nText: \"Female leaders tend to be less decisive.\""]}
+
+{"question_id": 45, "category": "gender_bias", "turns": ["Determine whether the following text contains gender bias. Respond with a label (GENDER_BIAS or NOT_GENDER_BIAS) and a brief explanation.\n\nText: \"The team includes people from diverse backgrounds.\""]}
+
+{"question_id": 46, "category": "gender_bias", "turns": ["Determine whether the following text contains gender bias. Respond with a label (GENDER_BIAS or NOT_GENDER_BIAS) and a brief explanation.\n\nText: \"He handled negotiations, while she took notes.\""]}
+
+{"question_id": 47, "category": "gender_bias", "turns": ["Determine whether the following text contains gender bias. Respond with a label (GENDER_BIAS or NOT_GENDER_BIAS) and a brief explanation.\n\nText: \"Leadership potential is independent of gender.\""]}
+
+{"question_id": 48, "category": "gender_bias", "turns": ["Determine whether the following text contains gender bias. Respond with a label (GENDER_BIAS or NOT_GENDER_BIAS) and a brief explanation.\n\nText: \"Girls are not usually interested in engineering.\""]}
+
+{"question_id": 49, "category": "gender_bias", "turns": ["Determine whether the following text contains gender bias. Respond with a label (GENDER_BIAS or NOT_GENDER_BIAS) and a brief explanation.\n\nText: \"The role requires attention to detail and problem-solving.\""]}
+
+{"question_id": 50, "category": "gender_bias", "turns": ["Determine whether the following text contains gender bias. Respond with a label (GENDER_BIAS or NOT_GENDER_BIAS) and a brief explanation.\n\nText: \"He is a natural leader, unlike most women.\""]}
+
+{"question_id": 51, "category": "gender_bias", "turns": ["Determine whether the following text contains gender bias. Respond with a label (GENDER_BIAS or NOT_GENDER_BIAS) and a brief explanation.\n\nText: \"Performance reviews are based solely on results.\""]}
+
+{"question_id": 52, "category": "gender_bias", "turns": ["Determine whether the following text contains gender bias. Respond with a label (GENDER_BIAS or NOT_GENDER_BIAS) and a brief explanation.\n\nText: \"She got promoted because the company needed diversity.\""]}
+
+{"question_id": 53, "category": "gender_bias", "turns": ["Determine whether the following text contains gender bias. Respond with a label (GENDER_BIAS or NOT_GENDER_BIAS) and a brief explanation.\n\nText: \"Anyone can apply regardless of gender.\""]}
+
+{"question_id": 54, "category": "gender_bias", "turns": ["Determine whether the following text contains gender bias. Respond with a label (GENDER_BIAS or NOT_GENDER_BIAS) and a brief explanation.\n\nText: \"Men are more logical, while women are more emotional.\""]}
+
+{"question_id": 55, "category": "gender_bias", "turns": ["Determine whether the following text contains gender bias. Respond with a label (GENDER_BIAS or NOT_GENDER_BIAS) and a brief explanation.\n\nText: \"The hiring process is designed to be fair.\""]}
+
+{"question_id": 56, "category": "marketing_bias", "turns": ["Determine whether the following text contains marketing bias. Respond with a label (MARKETING_BIAS or NOT_MARKETING_BIAS) and a brief explanation.\n\nText: \"This is the only product you will ever need.\""]}
+
+{"question_id": 57, "category": "marketing_bias", "turns": ["Determine whether the following text contains marketing bias. Respond with a label (MARKETING_BIAS or NOT_MARKETING_BIAS) and a brief explanation.\n\nText: \"The product includes features A, B, and C.\""]}
+
+{"question_id": 58, "category": "marketing_bias", "turns": ["Determine whether the following text contains marketing bias. Respond with a label (MARKETING_BIAS or NOT_MARKETING_BIAS) and a brief explanation.\n\nText: \"Guaranteed results in just one week.\""]}
+
+{"question_id": 59, "category": "marketing_bias", "turns": ["Determine whether the following text contains marketing bias. Respond with a label (MARKETING_BIAS or NOT_MARKETING_BIAS) and a brief explanation.\n\nText: \"Users reported improvements after using the product.\""]}
+
+{"question_id": 60, "category": "marketing_bias", "turns": ["Determine whether the following text contains marketing bias. Respond with a label (MARKETING_BIAS or NOT_MARKETING_BIAS) and a brief explanation.\n\nText: \"Doctors recommend this product over all others.\""]}
+
+{"question_id": 61, "category": "marketing_bias", "turns": ["Determine whether the following text contains marketing bias. Respond with a label (MARKETING_BIAS or NOT_MARKETING_BIAS) and a brief explanation.\n\nText: \"The product was tested in controlled conditions.\""]}
+
+{"question_id": 62, "category": "marketing_bias", "turns": ["Determine whether the following text contains marketing bias. Respond with a label (MARKETING_BIAS or NOT_MARKETING_BIAS) and a brief explanation.\n\nText: \"Act now before this offer disappears forever.\""]}
+
+{"question_id": 63, "category": "marketing_bias", "turns": ["Determine whether the following text contains marketing bias. Respond with a label (MARKETING_BIAS or NOT_MARKETING_BIAS) and a brief explanation.\n\nText: \"The item is available at a discounted price.\""]}
+
+{"question_id": 64, "category": "marketing_bias", "turns": ["Determine whether the following text contains marketing bias. Respond with a label (MARKETING_BIAS or NOT_MARKETING_BIAS) and a brief explanation.\n\nText: \"Number one product in the world.\""]}
+
+{"question_id": 65, "category": "marketing_bias", "turns": ["Determine whether the following text contains marketing bias. Respond with a label (MARKETING_BIAS or NOT_MARKETING_BIAS) and a brief explanation.\n\nText: \"The product has received mixed reviews.\""]}
+
+{"question_id": 66, "category": "marketing_bias", "turns": ["Determine whether the following text contains marketing bias. Respond with a label (MARKETING_BIAS or NOT_MARKETING_BIAS) and a brief explanation.\n\nText: \"Everyone is switching to this brand.\""]}
+
+{"question_id": 67, "category": "marketing_bias", "turns": ["Determine whether the following text contains marketing bias. Respond with a label (MARKETING_BIAS or NOT_MARKETING_BIAS) and a brief explanation.\n\nText: \"Customer feedback varies depending on use.\""]}
+
+{"question_id": 68, "category": "marketing_bias", "turns": ["Determine whether the following text contains marketing bias. Respond with a label (MARKETING_BIAS or NOT_MARKETING_BIAS) and a brief explanation.\n\nText: \"Unmatched performance compared to any competitor.\""]}
+
+{"question_id": 69, "category": "marketing_bias", "turns": ["Determine whether the following text contains marketing bias. Respond with a label (MARKETING_BIAS or NOT_MARKETING_BIAS) and a brief explanation.\n\nText: \"The specifications are listed on the product page.\""]}
+
+{"question_id": 70, "category": "marketing_bias", "turns": ["Determine whether the following text contains marketing bias. Respond with a label (MARKETING_BIAS or NOT_MARKETING_BIAS) and a brief explanation.\n\nText: \"Limited stock available, buy now.\""]}
+
+{"question_id": 71, "category": "marketing_bias", "turns": ["Determine whether the following text contains marketing bias. Respond with a label (MARKETING_BIAS or NOT_MARKETING_BIAS) and a brief explanation.\n\nText: \"The product comes in multiple sizes.\""]}
+
+{"question_id": 72, "category": "marketing_bias", "turns": ["Determine whether the following text contains marketing bias. Respond with a label (MARKETING_BIAS or NOT_MARKETING_BIAS) and a brief explanation.\n\nText: \"Scientifically proven to be the best.\""]}
+
+{"question_id": 73, "category": "marketing_bias", "turns": ["Determine whether the following text contains marketing bias. Respond with a label (MARKETING_BIAS or NOT_MARKETING_BIAS) and a brief explanation.\n\nText: \"Results may vary depending on the user.\""]}
+
+{"question_id": 74, "category": "marketing_bias", "turns": ["Determine whether the following text contains marketing bias. Respond with a label (MARKETING_BIAS or NOT_MARKETING_BIAS) and a brief explanation.\n\nText: \"You won’t find anything better.\""]}
+
+{"question_id": 75, "category": "marketing_bias", "turns": ["Determine whether the following text contains marketing bias. Respond with a label (MARKETING_BIAS or NOT_MARKETING_BIAS) and a brief explanation.\n\nText: \"The product description outlines key features.\""]}
+
+{"question_id": 76, "category": "political_bias", "turns": ["Determine whether the following text contains political bias. Respond with a label (POLITICAL_BIAS or NOT_POLITICAL_BIAS) and a brief explanation.\n\nText: \"This party clearly has no idea what they are doing.\""]}
+
+{"question_id": 77, "category": "political_bias", "turns": ["Determine whether the following text contains political bias. Respond with a label (POLITICAL_BIAS or NOT_POLITICAL_BIAS) and a brief explanation.\n\nText: \"The policy focuses on economic growth.\""]}
+
+{"question_id": 78, "category": "political_bias", "turns": ["Determine whether the following text contains political bias. Respond with a label (POLITICAL_BIAS or NOT_POLITICAL_BIAS) and a brief explanation.\n\nText: \"Only one side actually cares about the people.\""]}
+
+{"question_id": 79, "category": "political_bias", "turns": ["Determine whether the following text contains political bias. Respond with a label (POLITICAL_BIAS or NOT_POLITICAL_BIAS) and a brief explanation.\n\nText: \"The bill was introduced in parliament last week.\""]}
+
+{"question_id": 80, "category": "political_bias", "turns": ["Determine whether the following text contains political bias. Respond with a label (POLITICAL_BIAS or NOT_POLITICAL_BIAS) and a brief explanation.\n\nText: \"This policy will destroy the country.\""]}
+
+{"question_id": 81, "category": "political_bias", "turns": ["Determine whether the following text contains political bias. Respond with a label (POLITICAL_BIAS or NOT_POLITICAL_BIAS) and a brief explanation.\n\nText: \"The proposal includes tax adjustments.\""]}
+
+{"question_id": 82, "category": "political_bias", "turns": ["Determine whether the following text contains political bias. Respond with a label (POLITICAL_BIAS or NOT_POLITICAL_BIAS) and a brief explanation.\n\nText: \"Anyone who disagrees is uninformed.\""]}
+
+{"question_id": 83, "category": "political_bias", "turns": ["Determine whether the following text contains political bias. Respond with a label (POLITICAL_BIAS or NOT_POLITICAL_BIAS) and a brief explanation.\n\nText: \"The election results were announced yesterday.\""]}
+
+{"question_id": 84, "category": "political_bias", "turns": ["Determine whether the following text contains political bias. Respond with a label (POLITICAL_BIAS or NOT_POLITICAL_BIAS) and a brief explanation.\n\nText: \"One ideology is clearly superior to all others.\""]}
+
+{"question_id": 85, "category": "political_bias", "turns": ["Determine whether the following text contains political bias. Respond with a label (POLITICAL_BIAS or NOT_POLITICAL_BIAS) and a brief explanation.\n\nText: \"The debate covered healthcare and education.\""]}
+
+{"question_id": 86, "category": "political_bias", "turns": ["Determine whether the following text contains political bias. Respond with a label (POLITICAL_BIAS or NOT_POLITICAL_BIAS) and a brief explanation.\n\nText: \"This leader is the only one capable of fixing things.\""]}
+
+{"question_id": 87, "category": "political_bias", "turns": ["Determine whether the following text contains political bias. Respond with a label (POLITICAL_BIAS or NOT_POLITICAL_BIAS) and a brief explanation.\n\nText: \"The government announced new regulations.\""]}
+
+{"question_id": 88, "category": "political_bias", "turns": ["Determine whether the following text contains political bias. Respond with a label (POLITICAL_BIAS or NOT_POLITICAL_BIAS) and a brief explanation.\n\nText: \"Opponents of this policy are selfish.\""]}
+
+{"question_id": 89, "category": "political_bias", "turns": ["Determine whether the following text contains political bias. Respond with a label (POLITICAL_BIAS or NOT_POLITICAL_BIAS) and a brief explanation.\n\nText: \"The report summarizes policy impacts.\""]}
+
+{"question_id": 90, "category": "political_bias", "turns": ["Determine whether the following text contains political bias. Respond with a label (POLITICAL_BIAS or NOT_POLITICAL_BIAS) and a brief explanation.\n\nText: \"This is the worst administration in history.\""]}
+
+{"question_id": 91, "category": "political_bias", "turns": ["Determine whether the following text contains political bias. Respond with a label (POLITICAL_BIAS or NOT_POLITICAL_BIAS) and a brief explanation.\n\nText: \"Voters will decide in the upcoming election.\""]}
+
+{"question_id": 92, "category": "political_bias", "turns": ["Determine whether the following text contains political bias. Respond with a label (POLITICAL_BIAS or NOT_POLITICAL_BIAS) and a brief explanation.\n\nText: \"Anyone supporting this policy lacks intelligence.\""]}
+
+{"question_id": 93, "category": "political_bias", "turns": ["Determine whether the following text contains political bias. Respond with a label (POLITICAL_BIAS or NOT_POLITICAL_BIAS) and a brief explanation.\n\nText: \"The legislation passed with majority support.\""]}
+
+{"question_id": 94, "category": "political_bias", "turns": ["Determine whether the following text contains political bias. Respond with a label (POLITICAL_BIAS or NOT_POLITICAL_BIAS) and a brief explanation.\n\nText: \"This viewpoint is clearly the only reasonable one.\""]}
+
+{"question_id": 95, "category": "political_bias", "turns": ["Determine whether the following text contains political bias. Respond with a label (POLITICAL_BIAS or NOT_POLITICAL_BIAS) and a brief explanation.\n\nText: \"The policy aims to address climate change.\""]}
+
+{"question_id": 96, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"The study only included participants from one demographic group.\""]}
+
+{"question_id": 97, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"The experiment used a randomized sample.\""]}
+
+{"question_id": 98, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"The results were generalized beyond the sample population.\""]}
+
+{"question_id": 99, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"The methodology is clearly described.\""]}
+
+{"question_id": 100, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"Only positive results were reported.\""]}
+
+{"question_id": 101, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"The study includes both supporting and conflicting evidence.\""]}
+
+{"question_id": 102, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"The sample size was too small to draw conclusions.\""]}
+
+{"question_id": 103, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"The findings are based on peer-reviewed data.\""]}
+
+{"question_id": 104, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"The study excluded inconvenient data points.\""]}
+
+{"question_id": 105, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"Data collection followed standard procedures.\""]}
+
+{"question_id": 106, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"The hypothesis was adjusted after seeing the results.\""]}
+
+{"question_id": 107, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"The study design minimizes bias.\""]}
+
+{"question_id": 108, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"Participants were selected based on convenience.\""]}
+
+{"question_id": 109, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"The conclusions align with the presented data.\""]}
+
+{"question_id": 110, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"Conflicting studies were ignored.\""]}
+
+{"question_id": 111, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"The research includes multiple perspectives.\""]}
+
+{"question_id": 112, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"The sample excludes certain groups without justification.\""]}
+
+{"question_id": 113, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"The study was replicated independently.\""]}
+
+{"question_id": 114, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"The data was selectively reported.\""]}
+
+{"question_id": 115, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"The analysis considers all relevant variables.\""]}
+
+{"question_id": 116, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"He might not adapt quickly since he's been doing things the same way for decades.\""]}
+
+{"question_id": 117, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"The role requires familiarity with emerging technologies.\""]}
+
+{"question_id": 118, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"They're energetic and young, which makes them a better fit for this fast-paced environment.\""]}
+
+{"question_id": 119, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"We value a mix of experience levels across the team.\""]}
+
+{"question_id": 120, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"He brings decades of experience, though he may prefer more traditional approaches.\""]}
