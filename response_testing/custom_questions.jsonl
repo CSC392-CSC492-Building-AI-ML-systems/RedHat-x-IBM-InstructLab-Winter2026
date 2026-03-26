@@ -227,3 +227,13 @@
 {"question_id": 114, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"The data was selectively reported.\""]}
 
 {"question_id": 115, "category": "research_bias", "turns": ["Determine whether the following text contains research bias. Respond with a label (RESEARCH_BIAS or NOT_RESEARCH_BIAS) and a brief explanation.\n\nText: \"The analysis considers all relevant variables.\""]}
+
+{"question_id": 116, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"He might not adapt quickly since he's been doing things the same way for decades.\""]}
+
+{"question_id": 117, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"The role requires familiarity with emerging technologies.\""]}
+
+{"question_id": 118, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"They're energetic and young, which makes them a better fit for this fast-paced environment.\""]}
+
+{"question_id": 119, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"We value a mix of experience levels across the team.\""]}
+
+{"question_id": 120, "category": "ageism", "turns": ["Determine whether the following text contains ageism. Respond with a label (AGEISM or NOT_AGEISM) and a brief explanation.\n\nText: \"He brings decades of experience, though he may prefer more traditional approaches.\""]}
