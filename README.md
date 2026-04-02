@@ -149,6 +149,8 @@ python response_testing/test.py
 
 **Granite-7B** — base LLM fine-tuned for bias detection
 
+**MT-Bench** — evaluating model performance
+
 **Git** — version control and project management
 
 **Google Cloud Platform** — training and scalable compute
