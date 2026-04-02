@@ -16,12 +16,12 @@ InstructLab's model-agnostic technology allows new skills to be composed into an
 
 | Category | Description |
 |---|---|
-| **Political** | Partisan language, loaded terminology, evaluative framing |
-| **Gender** | Stereotyping by gender in job roles, pronouns, or professional development |
-| **Ageism** | Stereotyping or discrimination based on age |
-| **Ethical** | Racial, cultural, religious, language/dialect, and socioeconomic bias |
-| **Marketing** | Exaggerated or unsubstantiated claims in promotional copy |
-| **Research** | Confirmation bias, selective reporting, overconfident conclusions |
+| **Political** | Flag any poltical favoritism, negative comments, and sterotyping baased of poltical views |
+| **Gender** | Flag any gender stereotyping or discrimination that can affect external decision (ex. professional development) |
+| **Ageism** | Flag any stereotyping or discrimination based on age |
+| **Ethical** | Flag racial, cultural, religious, language/dialect, and socioeconomic biases |
+| **Marketing** | Flag any text that seems to contain fabricated claims in promotional content |
+| **Research** | Flag any confirmation bias, selective reporting, opinionized views, and overconfident conclusions |
 
 ---
 
