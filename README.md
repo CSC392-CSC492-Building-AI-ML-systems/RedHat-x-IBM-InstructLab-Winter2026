@@ -1,78 +1,186 @@
-# RedHat x IBM Instruct Lab Bias Detection Model
+# RedHat x IBM InstructLab Bias Detection Model
 
-This model trains [RedHat x IBM Instruct Lab](http://instructlab.ai/) to create a Bias Detection Model, using numerous taxonmies focusing on different types of biases to help identify bias in various forms of text. Upon reveiving the user's prompt, the model will identify any bias in the text, highlight the text and explain why the text provided is bias for the user to understand what to avoid to prevent bias in text. 
+This project fine-tunes [RedHat x IBM InstructLab](http://instructlab.ai/) to create a Bias Detection Model. Using taxonomies across multiple bias categories, the model identifies bias in text, highlights the relevant content, and explains why it is biased — helping users understand what to avoid.
 
 ## Overview
 
-InstructLab's model-agnostic technology gives model upstreams with sufficient infrastructure resources the ability to create regular builds of their open source licensed models not by rebuilding and retraining the entire model but by composing new skills into it.
-
-## Results
-
-| Original Model | Our Bias Detection Model |
-|----------------|--------------------------|
-| ---% Accuracy  | ---% Accuracy |
+InstructLab's model-agnostic technology allows new skills to be composed into an open source model without retraining from scratch. We use this framework to generate synthetic training data and fine-tune a Granite-7B base model for bias detection across 6 categories.
 
 ## Small Example
 
 <img width="1241" height="745" alt="image" src="https://github.com/user-attachments/assets/bb29a09d-c53d-43c0-8b0f-36f52e2b8536" />
 
-## Installation/How to run
+---
 
-1. Clone this repository 
-2. [Install Instruct Lab for your system](https://docs.instructlab.ai/getting-started/mac_metal/) 
-3. 
+## Bias Categories
 
-## Technologies Used
+| Category | Description |
+|---|---|
+| **Political** | Partisan language, loaded terminology, evaluative framing |
+| **Gender** | Stereotyping by gender in job roles, pronouns, or professional development |
+| **Ageism** | Stereotyping or discrimination based on age |
+| **Ethical** | Racial, cultural, religious, language/dialect, and socioeconomic bias |
+| **Marketing** | Exaggerated or unsubstantiated claims in promotional copy |
+| **Research** | Confirmation bias, selective reporting, overconfident conclusions |
 
-**IBM InstructLab** –------> for instruction-based model refinement and dataset generation
+---
 
-**Git** –-------------------> for version control and project management
+## Results
 
-**MT-Bench** –------------> for evaluating model performance
+| Metric | Original Model | Our Bias Detection Model |
+|---|---|---|
+| Political Bias Accuracy | ---% | **100%** |
+| Political Bias F1 | --- | **1.00** |
+| Sexism Accuracy | ---% | see `kaggle_testing/results/` |
 
-**Google Cloud Platform** –> for training and scalable compute
+---
+
+## Pipeline Overview
+
+```
+bias/*/qna.yaml
+       │
+       ▼
+auto_generate.py          ← stages taxonomies + runs ilab data generate
+       │
+       ▼
+datasets/                 ← synthetic JSONL training data (SDG output)
+       │
+       ▼
+ilab model train          ← fine-tunes Granite-7B on generated data
+       │
+       ▼
+training_results/         ← checkpoints + final merged model
+       │
+       ▼
+kaggle_testing/           ← evaluates on real-world bias datasets
+response_testing/         ← evaluates free-form answers via GPT-4o-mini judge
+```
+
+---
 
 ## Project Structure
 
-**/data** ---------> Training and evaluation datasets  
-**/models** ------> Model checkpoints or saved models  
-**/src** ----------> Core model and processing code  
-**/evaluation** ---> Benchmarking and testing scripts  
-**README.md** -> Project documentation  
+```
+.
+├── auto_generate.py              # Taxonomy staging + ilab SDG launcher
+├── bias/                         # Seed taxonomies (qna.yaml per category)
+│   ├── ageism/
+│   ├── ethical bias/
+│   ├── gender bias/
+│   ├── marketing/
+│   ├── political/
+│   └── reasearch/
+├── datasets/                     # Generated training/test data (JSONL)
+│   └── SDG_Output/               # ilab recipe files
+├── kaggle_testing/               # Evaluation against Kaggle datasets
+│   ├── data/
+│   │   ├── political_bias.csv
+│   │   └── sexism.csv
+│   ├── results/                  # Evaluation output (JSONL + JSON summary)
+│   ├── political_test.py
+│   └── sexism_test.py
+├── response_testing/             # Free-form response quality evaluation
+│   ├── test.py                   # GPT-4o-mini judge
+│   └── custom_questions.jsonl    # Evaluation prompts
+├── training_results/             # Model checkpoints + final merged model
+│   ├── checkpoint-*/
+│   ├── final/
+│   └── merged_model/
+└── unified_taxonomy/             # Staged taxonomy for ilab (auto-generated)
+```
+
+---
+
+## Installation / How to Run
+
+1. Clone this repository
+2. [Install InstructLab for your system](https://docs.instructlab.ai/getting-started/mac_metal/)
+3. Install Python dependencies:
+
+```bash
+pip install python-dotenv openai scikit-learn pyyaml transformers
+```
+
+### Generate synthetic training data
+
+```bash
+python auto_generate.py
+```
+
+### Train the model
+
+```bash
+ilab model train --data-path datasets/ --output-dir training_results/
+```
+
+### Serve the model
+
+```bash
+ilab model serve --model-path training_results/ggml-model-q8_0.gguf
+```
+
+### Run Kaggle evaluations
+
+```bash
+python kaggle_testing/political_test.py
+python kaggle_testing/sexism_test.py
+```
+
+Results are written to `kaggle_testing/results/` as a JSONL file (per-row predictions) and a JSON summary (accuracy, precision, recall, F1).
+
+### Run free-form response evaluation
+
+Requires an OpenAI API key in a `.env` file:
+
+```
+OPENAI_API_KEY=sk-...
+```
+
+```bash
+python response_testing/test.py
+```
+
+---
+
+## Technologies Used
+
+**IBM InstructLab** — instruction-based model refinement and synthetic dataset generation
+
+**Granite-7B** — base LLM fine-tuned for bias detection
+
+**Git** — version control and project management
+
+**Google Cloud Platform** — training and scalable compute
+
+---
 
 ## Ethical Considerations
 
-• The model addresses sensitive social concepts such as bias, discrimination, and stereotypes.
+- The model addresses sensitive social concepts such as bias, discrimination, and stereotypes.
+- There is a risk of false positives, where neutral or contextual language may be incorrectly flagged as biased.
+- Over-reliance on the model may lead users to treat outputs as authoritative judgments rather than advisory feedback, which is not the intended use of this model.
+- The model is designed to provide neutral explanations as much as possible to ensure outputs are not accusatory or moralizing.
+- Bias detection outputs are intended to support reflection and revision, not punishment or exclusion.
 
-• There is a risk of false positives, where neutral or contextual language may be incorrectly flagged as biased.
-
-• Over-reliance on the model may lead users to treat outputs as authoritative judgments rather than advisory feedback, which is not the intended use of this model.
-
-• The model is designed to provide neutral explanations as much as possible within the capabilities of the developers to ensure the model is as unbiased as possible without accusatory or moralizing language.
-
-• Bias detection outputs are intended to support reflection and revision, not punishment or exclusion.
+---
 
 ## License
 
 This project is licensed under the MIT License.
 
+---
+
 ## Team
 
-**CSC398 Group 1**
+**CSC398 Group 1** — University of Toronto
 
-• Shaarif Ali Syed
-
-• Asser Ismail
-
-• Remy Zazo
-
-• Zelimir Stajic
-
-• Belal Shrief
-
-University of Toronto
+- Shaarif Ali Syed
+- Asser Ismail
+- Remy Zazo
+- Zelimir Stajic
+- Belal Shrief
 
 **Special Thanks**
 
-Special thanks to our industry mentors Carol Chen and Wesly Chun, and to the RedHat x IBM Instruct Lab for the model, guidance, and reference material that made this work possible.
-
+Special thanks to our industry mentors Carol Chen and Wesley Chun, and to RedHat x IBM InstructLab for the model, guidance, and reference material that made this work possible.

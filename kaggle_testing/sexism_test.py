@@ -70,16 +70,20 @@ def normalize_gold_label(raw_label: str) -> str:
 
 def normalize_model_label(answer: str) -> str:
     text = answer.strip().lower()
+
+    # Check for explicit label: pattern first
     match = re.search(r"label:\s*(.+)", text)
-    if match:
-        label_text = match.group(1).strip()
-    else:
-        label_text = text
+    label_text = match.group(1).strip() if match else text
 
     if any(x in label_text for x in ["not_sexism", "not sexism", "non-sexist", "non sexist", "not sexist"]):
         return "not_sexist"
-
     if any(x in label_text for x in ["sexism", "sexist"]):
+        return "sexist"
+
+    # Fallback: model may respond in its trained bias-detection format
+    if any(x in text for x in ["no bias detected", "no bias", "not biased"]):
+        return "not_sexist"
+    if any(x in text for x in ["gender bias", "this is bias", "contains bias", "bias detected"]):
         return "sexist"
 
     return "unknown"

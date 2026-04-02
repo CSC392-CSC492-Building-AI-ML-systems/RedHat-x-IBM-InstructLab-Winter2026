@@ -48,26 +48,6 @@ def build_prompt(text: str) -> str:
     return f'Does this text contain political bias?\n"{text}"'
 
 # =========================
-# NORMALIZATION (ALIGNED WITH QNA.YAML)
-# =========================
-def normalize_model_label(answer: str) -> str:
-    text = answer.strip().lower()
-
-    # The model was trained to start answers with "Yes." or "No."
-    if text.startswith("yes"):
-        return "bias"
-    if text.startswith("no"):
-        return "not_bias"
-
-    # Fallback catch-alls just in case it formats weirdly
-    if any(x in text for x in ["not_bias", "not bias", "no bias", "center"]):
-        return "not_bias"
-    if "bias" in text or "biased" in text:
-        return "bias"
-
-    return "unknown"
-
-# =========================
 # NORMALIZATION
 # =========================
 def normalize_gold_label(raw_label: str) -> str:
@@ -80,16 +60,22 @@ def normalize_gold_label(raw_label: str) -> str:
 
 def normalize_model_label(answer: str) -> str:
     text = answer.strip().lower()
+
+    # Primary: model was trained to start answers with "Yes." or "No."
+    if text.startswith("yes"):
+        return "bias"
+    if text.startswith("no"):
+        return "not_bias"
+
+    # Fallback: check for explicit label: pattern
     match = re.search(r"label:\s*(.+)", text)
-    if match:
-        label_text = match.group(1).strip()
-    else:
-        label_text = text
+    label_text = match.group(1).strip() if match else text
 
     if any(x in label_text for x in ["not_bias", "not bias", "no bias", "center"]):
         return "not_bias"
     if "bias" in label_text or "biased" in label_text:
         return "bias"
+
     return "unknown"
 
 
