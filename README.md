@@ -27,35 +27,39 @@ InstructLab's model-agnostic technology allows new skills to be composed into an
 
 ## Results
 
-| Metric | Original Model | Our Bias Detection Model |
+Accuracy is calculated over all 50 samples — unknown/abstained predictions count as incorrect.
+
+| Metric | Original Granite-7B | Our Fine-tuned Model |
 |---|---|---|
-| Political Bias Accuracy | ---% | **98%** |
-| Political Bias Precision | ---% | **100%** |
-| Political Bias F1 | --- | **0.99** |
-| Sexism Accuracy | ---% | 27% (model over-predicts; trained on gender bias, not sexism) |
+| Political Bias Accuracy | 90% (5 abstentions) | **98%** (0 abstentions) |
+| Political Bias Precision | 100% | **100%** |
+| Political Bias F1 | 1.00 (on answered only) | **0.99** (all samples) |
+| Sexism Accuracy | 44% | 26% (out-of-domain — not trained on sexism) |
+
+Fine-tuning improved political bias detection by **+8 percentage points** and eliminated abstentions entirely. Sexism performance is lower because the model was not trained on sexism data; it was trained on gender bias, ageism, political, ethical, marketing, and research bias categories.
 
 ---
 
 ## Pipeline Overview
 
 ```
-bias/*/qna.yaml           ← Taxonomies that contain example questions and appropriate answers
-       │
-       ▼
-auto_generate.py          ← Stages taxonomies + runs ilab data generate
-       │
-       ▼
-datasets/                 ← Synthetic JSONL training data (SDG output)
-       │
-       ▼
-ilab model train          ← Fine-tunes Granite-7B on generated data
-       │
-       ▼
-training_results/         ← Checkpoints + final merged model
-       │
-       ▼
-kaggle_testing/           ← Evaluates on real-world bias datasets
-response_testing/         ← Evaluates free-form answers via GPT-4o-mini judge
+bias/*/qna.yaml ← Taxonomies that contain example questions and appropriate answers
+│
+▼
+auto_generate.py ← Stages taxonomies + runs ilab data generate
+│
+▼
+datasets/ ← Synthetic JSONL training data (SDG output)
+│
+▼
+ilab model train ← Fine-tunes Granite-7B on generated data
+│
+▼
+training_results/ ← Checkpoints + final merged model
+│
+▼
+kaggle_testing/ ← Evaluates on real-world bias datasets
+response_testing/ ← Evaluates free-form answers via GPT-4o-mini judge
 ```
 
 ---
@@ -64,31 +68,31 @@ response_testing/         ← Evaluates free-form answers via GPT-4o-mini judge
 
 ```
 .
-├── auto_generate.py              # Taxonomy staging + ilab SDG launcher
-├── bias/                         # Seed taxonomies (qna.yaml per category)
-│   ├── ageism/
-│   ├── ethical bias/
-│   ├── gender bias/
-│   ├── marketing/
-│   ├── political/
-│   └── reasearch/
-├── datasets/                     # Generated training/test data (JSONL)
-│   └── SDG_Output/               # ilab recipe files
-├── kaggle_testing/               # Evaluation against Kaggle datasets
-│   ├── data/
-│   │   ├── political_bias.csv
-│   │   └── sexism.csv
-│   ├── results/                  # Evaluation outputs (JSONL + JSON summary)
-│   ├── political_test.py         # To run Political Bias Evaluation and send to results/
-│   └── sexism_test.py            # To run Sexism Bias Evaluation and send to results/
-├── response_testing/             # Free-form response quality evaluation
-│   ├── test.py                   # GPT-4o-mini judge
-│   └── custom_questions.jsonl    # Evaluation prompts
-├── training_results/             # Model checkpoints + final merged model
-│   ├── checkpoint-*/
-│   ├── final/
-│   └── merged_model/
-└── unified_taxonomy/             # Staged taxonomy for ilab (auto-generated)
+├── auto_generate.py # Taxonomy staging + ilab SDG launcher
+├── bias/ # Seed taxonomies (qna.yaml per category)
+│ ├── ageism/
+│ ├── ethical bias/
+│ ├── gender bias/
+│ ├── marketing/
+│ ├── political/
+│ └── reasearch/
+├── datasets/ # Generated training/test data (JSONL)
+│ └── SDG_Output/ # ilab recipe files
+├── kaggle_testing/ # Evaluation against Kaggle datasets
+│ ├── data/
+│ │ ├── political_bias.csv
+│ │ └── sexism.csv
+│ ├── results/ # Evaluation outputs (JSONL + JSON summary)
+│ ├── political_test.py # To run Political Bias Evaluation and send to results/
+│ └── sexism_test.py # To run Sexism Bias Evaluation and send to results/
+├── response_testing/ # Free-form response quality evaluation
+│ ├── test.py # GPT-4o-mini judge
+│ └── custom_questions.jsonl # Evaluation prompts
+├── training_results/ # Model checkpoints + final merged model
+│ ├── checkpoint-*/
+│ ├── final/
+│ └── merged_model/
+└── unified_taxonomy/ # Staged taxonomy for ilab (auto-generated)
 ```
 
 ---
