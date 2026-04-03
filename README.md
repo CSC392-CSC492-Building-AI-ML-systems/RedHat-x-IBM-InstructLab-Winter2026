@@ -38,23 +38,23 @@ InstructLab's model-agnostic technology allows new skills to be composed into an
 ## Pipeline Overview
 
 ```
-bias/*/qna.yaml
+bias/*/qna.yaml           ← Taxonomies that contain example questions and appropriate answers
        │
        ▼
-auto_generate.py          ← stages taxonomies + runs ilab data generate
+auto_generate.py          ← Stages taxonomies + runs ilab data generate
        │
        ▼
-datasets/                 ← synthetic JSONL training data (SDG output)
+datasets/                 ← Synthetic JSONL training data (SDG output)
        │
        ▼
-ilab model train          ← fine-tunes Granite-7B on generated data
+ilab model train          ← Fine-tunes Granite-7B on generated data
        │
        ▼
-training_results/         ← checkpoints + final merged model
+training_results/         ← Checkpoints + final merged model
        │
        ▼
-kaggle_testing/           ← evaluates on real-world bias datasets
-response_testing/         ← evaluates free-form answers via GPT-4o-mini judge
+kaggle_testing/           ← Evaluates on real-world bias datasets
+response_testing/         ← Evaluates free-form answers via GPT-4o-mini judge
 ```
 
 ---
@@ -77,9 +77,9 @@ response_testing/         ← evaluates free-form answers via GPT-4o-mini judge
 │   ├── data/
 │   │   ├── political_bias.csv
 │   │   └── sexism.csv
-│   ├── results/                  # Evaluation output (JSONL + JSON summary)
-│   ├── political_test.py
-│   └── sexism_test.py
+│   ├── results/                  # Evaluation outputs (JSONL + JSON summary)
+│   ├── political_test.py         # To run Political Bias Evaluation and send to results/
+│   └── sexism_test.py            # To run Sexism Bias Evaluation and send to results/
 ├── response_testing/             # Free-form response quality evaluation
 │   ├── test.py                   # GPT-4o-mini judge
 │   └── custom_questions.jsonl    # Evaluation prompts
@@ -145,15 +145,15 @@ python response_testing/test.py
 
 ## Technologies Used
 
-**IBM InstructLab** — instruction-based model refinement and synthetic dataset generation
+**IBM InstructLab** — Instruction-based model refinement and synthetic dataset generation
 
-**Granite-7B** — base LLM fine-tuned for bias detection
+**Granite-7B** — Base LLM fine-tuned for bias detection
 
-**MT-Bench** — evaluating model performance
+**MT-Bench** — Evaluating model performance
 
-**Git** — version control and project management
+**Git** — Version control and project management
 
-**Google Cloud Platform** — training and scalable compute
+**Google Cloud Platform** — Training and scalable compute
 
 ---
 
