@@ -29,9 +29,10 @@ InstructLab's model-agnostic technology allows new skills to be composed into an
 
 | Metric | Original Model | Our Bias Detection Model |
 |---|---|---|
-| Political Bias Accuracy | ---% | **100%** |
-| Political Bias F1 | --- | **1.00** |
-| Sexism Accuracy | ---% | see `kaggle_testing/results/` |
+| Political Bias Accuracy | ---% | **98%** |
+| Political Bias Precision | ---% | **100%** |
+| Political Bias F1 | --- | **0.99** |
+| Sexism Accuracy | ---% | 27% (model over-predicts; trained on gender bias, not sexism) |
 
 ---
 

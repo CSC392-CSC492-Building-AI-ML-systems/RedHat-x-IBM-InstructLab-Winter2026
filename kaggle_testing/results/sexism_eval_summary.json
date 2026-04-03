@@ -1,0 +1,25 @@
+{
+  "input_csv": "/home/remy/instructlab-workspace/CSC398/kaggle_testing/data/sexism.csv",
+  "evaluated_split": null,
+  "total_rows_loaded": 50,
+  "total_scored": 48,
+  "unknown_predictions": 2,
+  "accuracy": 0.2708333333333333,
+  "precision_sexist": 0.2708333333333333,
+  "recall_sexist": 1.0,
+  "f1_sexist": 0.4262295081967213,
+  "confusion_matrix_labels": [
+    "sexist",
+    "not_sexist"
+  ],
+  "confusion_matrix": [
+    [
+      13,
+      0
+    ],
+    [
+      35,
+      0
+    ]
+  ]
+}
